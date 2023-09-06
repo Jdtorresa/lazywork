@@ -15,19 +15,19 @@ public class RolUsuarioService {
     @Autowired
     private UsuarioRolCrudRepository repoUR;
 
-    public List<RolUsuario> obtenerTodosLosUsuarioRoles() {
+    public List<RolUsuario> findAll() {
         return (List<RolUsuario>) repoUR.findAll();
     }
 
-    public Optional<RolUsuario> obtenerUsuarioRolesPorId(String id) {
+    public Optional<RolUsuario> findByID(String id) {
         return repoUR.findById(id);
     }
 
-    public RolUsuario crearUsuarioRoles(RolUsuario usuarioRoles) {
+    public RolUsuario save(RolUsuario usuarioRoles) {
         return repoUR.save(usuarioRoles);
     }
 
-    public void eliminarUsuarioRoles(String id) {
+    public void deleteById(String id) {
         repoUR.deleteById(id);
     }
 }

@@ -11,21 +11,25 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/usuario-rol")
+@RequestMapping("/api/rolusuario")
 public class RolUsuarioController {
 
     @Autowired
-    private RolUsuarioService servicioUR;
+    private RolUsuarioService servicioRDU;
 
-    @GetMapping
-    public ResponseEntity<List<RolUsuario>> obtenerTodosLosUsuarioRoles() {
-        List<RolUsuario> usuarioRoles = servicioUR.obtenerTodosLosUsuarioRoles();
-        return ResponseEntity.ok(usuarioRoles);
+    public RolUsuarioController(RolUsuarioService servicioRDU) {
+        this.servicioRDU = servicioRDU;
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<RolUsuario> obtenerUsuarioRolesPorId(@PathVariable String id) {
-        Optional<RolUsuario> usuarioRoles = servicioUR.obtenerUsuarioRolesPorId(id);
+    @GetMapping("/findAll")
+    public ResponseEntity<List<RolUsuario>> findAll() {
+        List<RolUsuario> rolUsuario = servicioRDU.findAll();
+        return ResponseEntity.ok(rolUsuario);
+    }
+
+    @GetMapping("/findById/{id}")
+    public ResponseEntity<RolUsuario> findById(@PathVariable String id) {
+        Optional<RolUsuario> usuarioRoles = servicioRDU.findByID(id);
         if (usuarioRoles.isPresent()) {
             return ResponseEntity.ok(usuarioRoles.get());
         } else {
@@ -33,15 +37,15 @@ public class RolUsuarioController {
         }
     }
 
-    @PostMapping
-    public ResponseEntity<RolUsuario> crearUsuarioRoles(@RequestBody RolUsuario usuarioRoles) {
-        RolUsuario usuarioRolesCreado = servicioUR.crearUsuarioRoles(usuarioRoles);
+    @PostMapping("/save")
+    public ResponseEntity<RolUsuario> save(@RequestBody RolUsuario rolUsuario) {
+        RolUsuario usuarioRolesCreado = servicioRDU.save(rolUsuario);
         return ResponseEntity.status(HttpStatus.CREATED).body(usuarioRolesCreado);
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> eliminarUsuarioRoles(@PathVariable String id) {
-        servicioUR.eliminarUsuarioRoles(id);
+    @DeleteMapping("/deleteById/{id}")
+    public ResponseEntity<Void> deleteById(@PathVariable String id) {
+        servicioRDU.deleteById(id);
         return ResponseEntity.noContent().build();
     }
 }
