@@ -1,7 +1,7 @@
 package com.lazywork.controlador;
 
 import com.lazywork.entidad.RolUsuario;
-import com.lazywork.servicios.UsuarioRolService;
+import com.lazywork.servicios.RolUsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,10 +12,10 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/usuario-rol")
-public class UsuarioRolController {
+public class RolUsuarioController {
 
     @Autowired
-    private UsuarioRolService servicioUR;
+    private RolUsuarioService servicioUR;
 
     @GetMapping
     public ResponseEntity<List<RolUsuario>> obtenerTodosLosUsuarioRoles() {

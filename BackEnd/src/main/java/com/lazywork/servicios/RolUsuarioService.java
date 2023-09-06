@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class UsuarioRolService {
+public class RolUsuarioService {
 
     @Autowired
     private UsuarioRolCrudRepository repoUR;
