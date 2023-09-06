@@ -1,46 +1,43 @@
 package com.lazywork.servicios;
 
 import com.lazywork.entidad.Usuario;
-import com.lazywork.repositorio.UsuarioSistemaCrudRepository;
+import com.lazywork.repositorio.UsuarioCrudRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.math.BigInteger;
 import java.util.List;
 import java.util.Optional;
 @Service
 @Transactional
-public class UsuarioSistemaService {
+public class UsuarioService {
 
     @Autowired
-    private UsuarioSistemaCrudRepository usuarioSistemaCrudRepository;
+    private UsuarioCrudRepository repoUsuario;
 
-    public boolean existeUsuario(String idUsuario) {
-        return usuarioSistemaCrudRepository.existsById(idUsuario);
+    public boolean existsById(Long id) {
+        return repoUsuario.existsById(String.valueOf(id));
     }
 
     public Optional<Usuario> findById(String id) {
-        return usuarioSistemaCrudRepository.findById(id);
+        return repoUsuario.findById(id);
     }
 
     public List<Usuario> findAll() {
-        return (List<Usuario>) usuarioSistemaCrudRepository.findAll();
+        return (List<Usuario>) repoUsuario.findAll();
     }
 
     public Usuario save(Usuario usuario) {
         try {
-            return usuarioSistemaCrudRepository.save(usuario);
+            return repoUsuario.save(usuario);
         } catch (Exception e) {
             // Maneja la excepción aquí, por ejemplo, puedes registrarla
             throw new RuntimeException("Error al guardar el usuario: " + e.getMessage());
         }
     }
 
-    public void delete(String id) {
-        if (existeUsuario(id)) {
-            usuarioSistemaCrudRepository.deleteById(id);
-        } else {
-            throw new RuntimeException("Usuario no encontrado con ID: " + id);
-        }
+    public void deleteById(String id) {
+        repoUsuario.deleteById(id);
     }
 }

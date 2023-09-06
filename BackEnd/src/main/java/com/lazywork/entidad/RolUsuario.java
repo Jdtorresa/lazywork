@@ -19,8 +19,6 @@ public class RolUsuario {
     @JoinColumn(name = "RolID", nullable = false)
     private Rol rol;
 
-    // Getters y Setters
-
     public Long getUsuarioRolID() {
         return usuarioRolID;
     }
@@ -43,14 +41,5 @@ public class RolUsuario {
 
     public void setRol(Rol rol) {
         this.rol = rol;
-    }
-
-    @Override
-    public String toString() {
-        return "RolUsuario{" +
-                "usuarioRolID=" + usuarioRolID +
-                ", usuario=" + usuario +
-                ", rol=" + rol +
-                '}';
     }
 }

@@ -1,7 +1,9 @@
 package com.lazywork.controlador;
 
 import com.lazywork.entidad.RolUsuario;
+import com.lazywork.servicios.RolService;
 import com.lazywork.servicios.RolUsuarioService;
+import com.lazywork.servicios.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,40 +14,49 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/rolusuario")
+@CrossOrigin("*")
 public class RolUsuarioController {
 
-    @Autowired
-    private RolUsuarioService servicioRDU;
+    private RolUsuarioService servicioRU;
 
-    public RolUsuarioController(RolUsuarioService servicioRDU) {
-        this.servicioRDU = servicioRDU;
+    @Autowired
+    public RolUsuarioController(RolUsuarioService servicioRU) {
+        this.servicioRU = servicioRU;
     }
 
     @GetMapping("/findAll")
     public ResponseEntity<List<RolUsuario>> findAll() {
-        List<RolUsuario> rolUsuario = servicioRDU.findAll();
-        return ResponseEntity.ok(rolUsuario);
+        return new ResponseEntity<>(servicioRU.findAll(), HttpStatus.OK);
     }
 
     @GetMapping("/findById/{id}")
-    public ResponseEntity<RolUsuario> findById(@PathVariable String id) {
-        Optional<RolUsuario> usuarioRoles = servicioRDU.findByID(id);
-        if (usuarioRoles.isPresent()) {
-            return ResponseEntity.ok(usuarioRoles.get());
+    public ResponseEntity<Optional<RolUsuario>> findById(@PathVariable String id) {
+        if (servicioRU.existsById(id)) {
+            return new ResponseEntity<>(servicioRU.findByID(id), HttpStatus.OK);
         } else {
-            return ResponseEntity.notFound().build();
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
 
+
     @PostMapping("/save")
     public ResponseEntity<RolUsuario> save(@RequestBody RolUsuario rolUsuario) {
-        RolUsuario usuarioRolesCreado = servicioRDU.save(rolUsuario);
-        return ResponseEntity.status(HttpStatus.CREATED).body(usuarioRolesCreado);
+        if(servicioRU.existsById(String.valueOf(rolUsuario.getUsuario().getUsuarioID()))){
+            if(servicioRU.existsById(String.valueOf(findById(String.valueOf(rolUsuario.getUsuario().getUsuarioID()))))){
+                servicioRU.save(rolUsuario);
+                return new ResponseEntity<>(HttpStatus.CREATED);
+            }
+            else{
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            }
+        }else{
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
     }
 
     @DeleteMapping("/deleteById/{id}")
     public ResponseEntity<Void> deleteById(@PathVariable String id) {
-        servicioRDU.deleteById(id);
+        servicioRU.deleteById(id);
         return ResponseEntity.noContent().build();
     }
 }

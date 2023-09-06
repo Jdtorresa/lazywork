@@ -3,33 +3,30 @@ package com.lazywork.entidad;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "Usuario")
+@Table
 public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "UsuarioID")
     private Long usuarioID;
 
-    @Column(name = "CodigoUnico", unique = true, nullable = false)
+    @Column(nullable = false, length = 50)
     private String codigoUnico;
 
-    @Column(name = "Nombre", nullable = false)
+    @Column(nullable = false, length = 50)
     private String nombre;
 
-    @Column(name = "Apellido", nullable = false)
+    @Column(nullable = false, length = 50)
     private String apellido;
 
-    @Column(name = "Documento", nullable = false)
+    @Column(nullable = false, length = 50)
     private String documento;
 
-    @Column(name = "NivelSoporte", nullable = false)
+    @Column(nullable = false, length = 50)
     private String nivelSoporte;
 
-    @Column(name = "TiempoUsoSistemaMinutos")
+    @Column(nullable = false, length = 50)
     private Integer tiempoUsoSistemaMinutos;
-
-    // Getters y Setters
 
     public Long getUsuarioID() {
         return usuarioID;
@@ -85,33 +82,5 @@ public class Usuario {
 
     public void setTiempoUsoSistemaMinutos(Integer tiempoUsoSistemaMinutos) {
         this.tiempoUsoSistemaMinutos = tiempoUsoSistemaMinutos;
-    }
-    private String nombreDeUsuario;
-
-    public Usuario(String nombreDeUsuario) {
-        this.nombreDeUsuario = nombreDeUsuario;
-        // Puedes agregar más lógica de inicialización aquí si es necesario
-    }
-
-    // Getters y setters para la propiedad nombreDeUsuario
-    public String getNombreDeUsuario() {
-        return nombreDeUsuario;
-    }
-
-    public void setNombreDeUsuario(String nombreDeUsuario) {
-        this.nombreDeUsuario = nombreDeUsuario;
-    }
-
-    @Override
-    public String toString() {
-        return "Usuario{" +
-                "usuarioID=" + usuarioID +
-                ", codigoUnico='" + codigoUnico + '\'' +
-                ", nombre='" + nombre + '\'' +
-                ", apellido='" + apellido + '\'' +
-                ", documento='" + documento + '\'' +
-                ", nivelSoporte='" + nivelSoporte + '\'' +
-                ", tiempoUsoSistemaMinutos=" + tiempoUsoSistemaMinutos +
-                '}';
     }
 }

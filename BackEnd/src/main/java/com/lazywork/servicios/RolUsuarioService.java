@@ -13,21 +13,23 @@ import java.util.Optional;
 public class RolUsuarioService {
 
     @Autowired
-    private UsuarioRolCrudRepository repoUR;
+    private UsuarioRolCrudRepository repoRU;
 
     public List<RolUsuario> findAll() {
-        return (List<RolUsuario>) repoUR.findAll();
+        return (List<RolUsuario>) repoRU.findAll();
     }
-
+    public boolean existsById(String id){
+        return repoRU.existsById(id);
+    }
     public Optional<RolUsuario> findByID(String id) {
-        return repoUR.findById(id);
+        return repoRU.findById(id);
     }
 
     public RolUsuario save(RolUsuario usuarioRoles) {
-        return repoUR.save(usuarioRoles);
+        return repoRU.save(usuarioRoles);
     }
 
     public void deleteById(String id) {
-        repoUR.deleteById(id);
+        repoRU.deleteById(id);
     }
 }

@@ -13,21 +13,23 @@ import java.util.Optional;
 public class RolService {
 
     @Autowired
-    private RolCrudRepository rolesRepository;
+    private RolCrudRepository repoRol;
 
-    public List<Rol> obtenerTodosLosRoles() {
-        return (List<Rol>) rolesRepository.findAll();
+    public List<Rol> findAll() {
+        return (List<Rol>) repoRol.findAll();
+    }
+    public boolean existsById(String id){
+        return repoRol.existsById(id);
+    }
+    public Optional<Rol> findById(String id) {
+        return repoRol.findById(id);
     }
 
-    public Optional<Rol> obtenerRolesPorId(String id) {
-        return rolesRepository.findById(id);
+    public Rol save(Rol roles) {
+        return repoRol.save(roles);
     }
 
-    public Rol crearRoles(Rol roles) {
-        return rolesRepository.save(roles);
-    }
-
-    public void eliminarRoles(String id) {
-        rolesRepository.deleteById(id);
+    public void deleteById(String id) {
+        repoRol.deleteById(id);
     }
 }
