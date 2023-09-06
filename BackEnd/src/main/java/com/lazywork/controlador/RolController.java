@@ -3,7 +3,7 @@ package com.lazywork.controlador;
 
 
         import com.lazywork.entidad.Rol;
-        import com.lazywork.servicios.RolesService;
+        import com.lazywork.servicios.RolService;
         import org.springframework.beans.factory.annotation.Autowired;
         import org.springframework.http.HttpStatus;
         import org.springframework.http.ResponseEntity;
@@ -17,7 +17,7 @@ package com.lazywork.controlador;
 public class RolController {
 
     @Autowired
-    private RolesService rolesService;
+    private RolService rolesService;
 
     @GetMapping
     public ResponseEntity<List<Rol>> obtenerTodosLosRoles() {

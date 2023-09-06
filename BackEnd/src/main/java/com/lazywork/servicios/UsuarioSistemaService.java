@@ -1,6 +1,6 @@
 package com.lazywork.servicios;
 
-import com.lazywork.entidad.UsuarioSistema;
+import com.lazywork.entidad.Usuario;
 import com.lazywork.repositorio.UsuarioSistemaCrudRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,15 +19,15 @@ public class UsuarioSistemaService {
         return usuarioSistemaCrudRepository.existsById(idUsuario);
     }
 
-    public Optional<UsuarioSistema> findById(String id) {
+    public Optional<Usuario> findById(String id) {
         return usuarioSistemaCrudRepository.findById(id);
     }
 
-    public List<UsuarioSistema> findAll() {
-        return (List<UsuarioSistema>) usuarioSistemaCrudRepository.findAll();
+    public List<Usuario> findAll() {
+        return (List<Usuario>) usuarioSistemaCrudRepository.findAll();
     }
 
-    public UsuarioSistema save(UsuarioSistema usuario) {
+    public Usuario save(Usuario usuario) {
         try {
             return usuarioSistemaCrudRepository.save(usuario);
         } catch (Exception e) {

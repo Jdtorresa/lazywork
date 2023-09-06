@@ -3,7 +3,7 @@ package com.lazywork.entidad;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "Roles")
+@Table(name = "Rol")
 public class Rol {
 
     @Id

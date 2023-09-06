@@ -3,8 +3,8 @@ package com.lazywork.entidad;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "UsuarioRoles")
-public class UsuarioRol {
+@Table(name = "rol_usuario")
+public class RolUsuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,7 +13,7 @@ public class UsuarioRol {
 
     @ManyToOne
     @JoinColumn(name = "UsuarioID", nullable = false)
-    private UsuarioSistema usuario;
+    private Usuario usuario;
 
     @ManyToOne
     @JoinColumn(name = "RolID", nullable = false)
@@ -29,11 +29,11 @@ public class UsuarioRol {
         this.usuarioRolID = usuarioRolID;
     }
 
-    public UsuarioSistema getUsuario() {
+    public Usuario getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(UsuarioSistema usuario) {
+    public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
 
@@ -47,7 +47,7 @@ public class UsuarioRol {
 
     @Override
     public String toString() {
-        return "UsuarioRol{" +
+        return "RolUsuario{" +
                 "usuarioRolID=" + usuarioRolID +
                 ", usuario=" + usuario +
                 ", rol=" + rol +

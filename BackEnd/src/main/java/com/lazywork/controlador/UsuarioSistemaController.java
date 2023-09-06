@@ -1,6 +1,6 @@
 package com.lazywork.controlador;
 
-import com.lazywork.entidad.UsuarioSistema;
+import com.lazywork.entidad.Usuario;
 import com.lazywork.servicios.UsuarioSistemaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,14 +18,14 @@ public class UsuarioSistemaController {
     private UsuarioSistemaService usuarioSistemaService;
 
     @GetMapping("/listar")
-    public ResponseEntity<List<UsuarioSistema>> obtenerTodosLosUsuarios() {
-        List<UsuarioSistema> usuarios = usuarioSistemaService.findAll();
+    public ResponseEntity<List<Usuario>> obtenerTodosLosUsuarios() {
+        List<Usuario> usuarios = usuarioSistemaService.findAll();
         return ResponseEntity.ok(usuarios);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<UsuarioSistema> obtenerUsuarioPorId(@PathVariable String id) {
-        Optional<UsuarioSistema> usuario = usuarioSistemaService.findById(id);
+    public ResponseEntity<Usuario> obtenerUsuarioPorId(@PathVariable String id) {
+        Optional<Usuario> usuario = usuarioSistemaService.findById(id);
         if (usuario.isPresent()) {
             return ResponseEntity.ok(usuario.get());
         } else {
@@ -34,13 +34,13 @@ public class UsuarioSistemaController {
     }
 
     @PostMapping("/crear")
-    public ResponseEntity<UsuarioSistema> crearUsuario(@RequestBody UsuarioSistema usuario) {
+    public ResponseEntity<Usuario> crearUsuario(@RequestBody Usuario usuario) {
         // Asegúrate de que el ID del usuario esté vacío o sea nulo antes de guardar
         if (usuario.getUsuarioID() != null) {
             return ResponseEntity.badRequest().body(null); // ID ya existe, devuelve un error 400 Bad Request
         }
 
-        UsuarioSistema nuevoUsuario = usuarioSistemaService.save(usuario);
+        Usuario nuevoUsuario = usuarioSistemaService.save(usuario);
 
         if (nuevoUsuario != null) {
             return ResponseEntity.status(HttpStatus.CREATED).body(nuevoUsuario);
@@ -51,7 +51,7 @@ public class UsuarioSistemaController {
 
 
     @PutMapping("/actualizar/{id}")
-    public ResponseEntity<UsuarioSistema> actualizarUsuario(@PathVariable String id, @RequestBody UsuarioSistema usuario) {
+    public ResponseEntity<Usuario> actualizarUsuario(@PathVariable String id, @RequestBody Usuario usuario) {
         if (usuarioSistemaService.existeUsuario(id)) {
             usuarioSistemaService.save(usuario);
             return ResponseEntity.ok(usuario);

@@ -1,8 +1,7 @@
 package com.lazywork.repositorio;
 
-import com.lazywork.entidad.UsuarioRol;
-import com.lazywork.entidad.UsuarioSistema;
+import com.lazywork.entidad.RolUsuario;
 import org.springframework.data.repository.CrudRepository;
 
-public interface UsuarioRolCrudRepository extends CrudRepository<UsuarioRol, String> {
+public interface UsuarioRolCrudRepository extends CrudRepository<RolUsuario, String> {
 }

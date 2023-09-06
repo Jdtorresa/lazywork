@@ -14,7 +14,7 @@ public class InicioSesion {
 
     @ManyToOne
     @JoinColumn(name = "usuario_id") // Esto puede variar dependiendo de tu modelo de datos
-    private UsuarioSistema usuario;
+    private Usuario usuario;
 
     // Agrega el campo usuarioid con su respectiva columna y relación con el usuario
     @Column(name = "usuarioid", nullable = false)
@@ -34,11 +34,11 @@ public class InicioSesion {
         this.inicioID = inicioID;
     }
 
-    public UsuarioSistema getUsuario() {
+    public Usuario getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(UsuarioSistema usuario) {
+    public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
         // Asigna el ID del usuario al campo 'usuarioid'
         this.usuarioid = usuario != null ? usuario.getUsuarioID() : null;

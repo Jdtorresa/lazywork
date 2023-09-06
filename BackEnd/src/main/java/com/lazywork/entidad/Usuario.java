@@ -3,8 +3,8 @@ package com.lazywork.entidad;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "UsuariosSistema")
-public class UsuarioSistema {
+@Table(name = "Usuario")
+public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -88,7 +88,7 @@ public class UsuarioSistema {
     }
     private String nombreDeUsuario;
 
-    public UsuarioSistema(String nombreDeUsuario) {
+    public Usuario(String nombreDeUsuario) {
         this.nombreDeUsuario = nombreDeUsuario;
         // Puedes agregar más lógica de inicialización aquí si es necesario
     }
@@ -104,7 +104,7 @@ public class UsuarioSistema {
 
     @Override
     public String toString() {
-        return "UsuarioSistema{" +
+        return "Usuario{" +
                 "usuarioID=" + usuarioID +
                 ", codigoUnico='" + codigoUnico + '\'' +
                 ", nombre='" + nombre + '\'' +
