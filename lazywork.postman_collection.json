@@ -38,7 +38,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "localhost:8080/api/rolusuario/findById/1",
+									"raw": "localhost:8080/api/rolusuario/findById/2",
 									"host": [
 										"localhost"
 									],
@@ -47,7 +47,7 @@
 										"api",
 										"rolusuario",
 										"findById",
-										"1"
+										"2"
 									]
 								}
 							},
@@ -60,7 +60,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"idUser\": \"u12345\",\r\n  \"nombre\": \"Juan\",\r\n  \"apellido\": \"Pérez\",\r\n  \"documento\": \"1234567890\"\r\n}",
+									"raw": "{\r\n    \"rolUsuarioID\": 2,\r\n    \"usuario\": {\r\n        \"usuarioID\": 2\r\n    },\r\n    \"rol\": {\r\n        \"rolID\": 1\r\n    }\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -89,7 +89,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"idUser\": \"u12345\",\r\n  \"nombre\": \"Juan\",\r\n  \"apellido\": \"Cobra\",\r\n  \"documento\": \"1234567890\"\r\n}",
+									"raw": "{\r\n    \"rolUsuarioID\": 2,\r\n    \"usuario\": {\r\n        \"usuarioID\": 2\r\n    },\r\n    \"rol\": {\r\n        \"rolID\": 1\r\n    }\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -117,7 +117,7 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "localhost:8080/api/rolusuario/deleteById/",
+									"raw": "localhost:8080/api/rolusuario/deleteById/1",
 									"host": [
 										"localhost"
 									],
@@ -126,7 +126,7 @@
 										"api",
 										"rolusuario",
 										"deleteById",
-										""
+										"1"
 									]
 								}
 							},

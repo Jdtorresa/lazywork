@@ -29,8 +29,8 @@ public class RolController {
     }
 
     @GetMapping("/findById/{id}")
-    public ResponseEntity<Optional<Rol>> findById(@PathVariable String id) {
-        if (servicioR.existsById(String.valueOf(id))) {
+    public ResponseEntity<Optional<Rol>> findById(@PathVariable Long id) {
+        if (servicioR.existsById(id)) {
             return new ResponseEntity<>(servicioR.findById(id), HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -39,7 +39,7 @@ public class RolController {
 
     @PostMapping("/save")
     public ResponseEntity<Rol> save(@RequestBody Rol rol) {
-        if(servicioR.existsById(String.valueOf(rol.getRolID())) == false){
+        if(servicioR.existsById(rol.getRolID()) == false){
             servicioR.save(rol);
             return new ResponseEntity<>(HttpStatus.CREATED);
         }
@@ -51,7 +51,7 @@ public class RolController {
 
     @PutMapping("/re_save")
     public ResponseEntity<Rol> re_save(@RequestBody Rol rol) {
-        if(servicioR.existsById(String.valueOf(rol.getRolID()))){
+        if(servicioR.existsById(rol.getRolID())){
             servicioR.save(rol);
             return new ResponseEntity<>(HttpStatus.OK);
         }
@@ -61,8 +61,8 @@ public class RolController {
     }
 
     @DeleteMapping("/deleteById/{id}")
-    public ResponseEntity<Void> deleteById(@PathVariable String id) {
-        if(servicioR.existsById(String.valueOf(id))){
+    public ResponseEntity<Void> deleteById(@PathVariable Long id) {
+        if(servicioR.existsById(id)){
             servicioR.deleteById(id);
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }

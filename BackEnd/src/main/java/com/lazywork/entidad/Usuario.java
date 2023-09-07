@@ -7,7 +7,9 @@ import jakarta.persistence.*;
 public class Usuario {
 
     @Id
+    /*
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+     */
     private Long usuarioID;
 
     @Column(nullable = false, length = 50)
@@ -27,6 +29,8 @@ public class Usuario {
 
     @Column(nullable = false, length = 50)
     private Integer tiempoUsoSistemaMinutos;
+
+
 
     public Long getUsuarioID() {
         return usuarioID;

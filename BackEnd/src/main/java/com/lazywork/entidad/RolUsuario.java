@@ -7,9 +7,11 @@ import jakarta.persistence.*;
 public class RolUsuario {
 
     @Id
+    /*
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "UsuarioRolID")
-    private Long usuarioRolID;
+     */
+    @Column
+    private Long rolUsuarioID;
 
     @ManyToOne
     @JoinColumn(name = "UsuarioID", nullable = false)
@@ -19,12 +21,13 @@ public class RolUsuario {
     @JoinColumn(name = "RolID", nullable = false)
     private Rol rol;
 
-    public Long getUsuarioRolID() {
-        return usuarioRolID;
+
+    public Long getRolUsuarioID() {
+        return rolUsuarioID;
     }
 
-    public void setUsuarioRolID(Long usuarioRolID) {
-        this.usuarioRolID = usuarioRolID;
+    public void setRolUsuarioID(Long rolUsuarioID) {
+        this.rolUsuarioID = rolUsuarioID;
     }
 
     public Usuario getUsuario() {
