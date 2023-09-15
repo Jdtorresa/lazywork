@@ -12,6 +12,7 @@ import java.util.Optional;
 public class EstadosIncidenciasService {
 
     @Autowired
+<<<<<<< HEAD
     private EstadosIncidenciasCrudRepository estadosIncidenciasRepository;
 
     public List<EstadoIncidencia> obtenerTodosLosEstadosIncidencias() {
@@ -32,5 +33,29 @@ public class EstadosIncidenciasService {
 
     public void eliminarEstadosIncidencias(Long id) {
         estadosIncidenciasRepository.deleteById(String.valueOf(id));
+=======
+    private EstadosIncidenciasCrudRepository estadosIncidenciasCrudRepository;
+
+
+
+    public List<EstadoIncidencia> obtenerTodasLosEstadosIncidencias() {
+        return (List<EstadoIncidencia>) estadosIncidenciasCrudRepository.findAll();
+    }
+
+    public Optional<EstadoIncidencia> obtenerEstadosIncidenciasPorId(Long id) {
+        return estadosIncidenciasCrudRepository.findById(String.valueOf(id));
+    }
+
+    public EstadoIncidencia crearEstadosIncidencias(EstadoIncidencia estadosIncidencias) {
+        return estadosIncidenciasCrudRepository.save(estadosIncidencias);
+    }
+
+    public EstadoIncidencia actualizarEstadosIncidencias(EstadoIncidencia estadosIncidencias) {
+        return estadosIncidenciasCrudRepository.save(estadosIncidencias);
+    }
+
+    public void eliminarEstadosIncidencias(Long id) {
+        estadosIncidenciasCrudRepository.deleteById(String.valueOf(id));
+>>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
     }
 }

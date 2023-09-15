@@ -6,6 +6,10 @@ import org.antlr.v4.runtime.misc.NotNull;
 
 @Entity
 @Table(name = "Usuarios")
+<<<<<<< HEAD
+=======
+
+>>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Usuario {
 
@@ -31,6 +35,10 @@ public class Usuario {
     }
 
     // Constructor con parámetros
+<<<<<<< HEAD
+=======
+
+>>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
     public Usuario(Long id, String nombre, String apellido, String documento, String nivelSoporte) {
         this.id = id;
         this.nombre = nombre;
@@ -38,6 +46,10 @@ public class Usuario {
         this.documento = documento;
         this.nivelSoporte = nivelSoporte;
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
     public Long getId() {
         return id;
     }
@@ -88,4 +100,8 @@ public class Usuario {
                 ", nivelSoporte='" + nivelSoporte + '\'' +
                 '}';
     }
+<<<<<<< HEAD
+=======
+// Ge
+>>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
 }

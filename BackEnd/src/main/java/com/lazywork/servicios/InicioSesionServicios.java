@@ -17,6 +17,10 @@ public class InicioSesionServicios {
         this.inicioSesionRepository = inicioSesionRepository;
     }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
     public List<InicioSesion> listaIniciosSesion() {
         return (List<InicioSesion>) inicioSesionRepository.findAll();
     }

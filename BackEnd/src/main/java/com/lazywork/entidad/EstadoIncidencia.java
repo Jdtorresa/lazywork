@@ -15,6 +15,11 @@ public class EstadoIncidencia {
     private String tipoEstado;
 
     // Getters y Setters
+<<<<<<< HEAD
+=======
+    public EstadoIncidencia() {
+    }
+>>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
 
     public Long getEstadoID() {
         return estadoID;
@@ -39,4 +44,10 @@ public class EstadoIncidencia {
                 ", tipoEstado='" + tipoEstado + '\'' +
                 '}';
     }
+<<<<<<< HEAD
+=======
+    public void setId(Long id){
+
+    }
+>>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
 }

@@ -1,6 +1,10 @@
 {
 	"info": {
+<<<<<<< HEAD
 		"_postman_id": "2f9e7ebd-507e-43e1-8b81-ee11274bfb24",
+=======
+		"_postman_id": "a230666b-f073-40fe-ab82-d53a432ee753",
+>>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
 		"name": "lazywork",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "26127259"
@@ -10,13 +14,62 @@
 			"name": "Usuario",
 			"item": [
 				{
+<<<<<<< HEAD
 					"name": "Insertar Usuario",
+=======
+					"name": "findAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/usuario/findAll",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"usuario",
+								"findAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/usuario/findById/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"usuario",
+								"findById",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "save",
+>>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
+<<<<<<< HEAD
 							"raw": "{\r\n  \"idUser\": \"12345\",\r\n  \"nombre\": \"Juan\",\r\n  \"apellido\": \"Pérez\",\r\n  \"documento\": \"1234567890\"\r\n}",
+=======
+							"raw": "{\r\n    \"usuarioID\": \"1\",\r\n    \"codigoUnico\": \"COD123\",\r\n    \"nombre\": \"Julian\",\r\n    \"apellido\": \"Guzman\",\r\n    \"documento\": \"1030536034\",\r\n    \"nivelSoporte\": \"Alto\",\r\n    \"tiempoUsoSistemaMinutos\": \"60\"\r\n}",
+>>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
 							"options": {
 								"raw": {
 									"language": "json"
@@ -24,7 +77,11 @@
 							}
 						},
 						"url": {
+<<<<<<< HEAD
 							"raw": "localhost:8080/api/usuario/insertar",
+=======
+							"raw": "localhost:8080/api/usuario/save",
+>>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
 							"host": [
 								"localhost"
 							],
@@ -32,20 +89,53 @@
 							"path": [
 								"api",
 								"usuario",
+<<<<<<< HEAD
 								"insertar"
+=======
+								"save"
+>>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
 							]
 						}
 					},
 					"response": []
 				},
 				{
+<<<<<<< HEAD
 					"name": "Actualizar Usuario",
+=======
+					"name": "deleteById",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/usuario/deleteById/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"usuario",
+								"deleteById",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "re_save",
+>>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
 					"request": {
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
+<<<<<<< HEAD
 							"raw": "{\r\n  \"idUser\": \"u12345\",\r\n  \"nombre\": \"Juan\",\r\n  \"apellido\": \"David\",\r\n  \"documento\": \"1234567890\"\r\n}",
+=======
+							"raw": "{\r\n    \"usuarioID\": \"1\",\r\n    \"codigoUnico\": \"COD123\",\r\n    \"nombre\": \"Laura\",\r\n    \"apellido\": \"Guzman\",\r\n    \"documento\": \"1030536034\",\r\n    \"nivelSoporte\": \"Alto\",\r\n    \"tiempoUsoSistemaMinutos\": \"60\"\r\n}",
+>>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
 							"options": {
 								"raw": {
 									"language": "json"
@@ -53,7 +143,11 @@
 							}
 						},
 						"url": {
+<<<<<<< HEAD
 							"raw": "localhost:8080/api/usuario/actualizar/u12345",
+=======
+							"raw": "localhost:8080/api/usuario/re_save",
+>>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
 							"host": [
 								"localhost"
 							],
@@ -61,73 +155,291 @@
 							"path": [
 								"api",
 								"usuario",
+<<<<<<< HEAD
 								"actualizar",
 								"u12345"
+=======
+								"re_save"
+>>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
 							]
 						}
 					},
 					"response": []
+<<<<<<< HEAD
 				},
 				{
 					"name": "Consulta ID",
+=======
+				}
+			]
+		},
+		{
+			"name": "Rol",
+			"item": [
+				{
+					"name": "findAll",
+>>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
+<<<<<<< HEAD
 							"raw": "localhost:8080/api/usuario/u12345",
+=======
+							"raw": "localhost:8080/api/rol/findAll",
+>>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
 								"api",
+<<<<<<< HEAD
 								"usuario",
 								"u12345"
+=======
+								"rol",
+								"findAll"
+>>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
 							]
 						}
 					},
 					"response": []
 				},
 				{
+<<<<<<< HEAD
 					"name": "Consultar lista",
+=======
+					"name": "finById",
+>>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
+<<<<<<< HEAD
 							"raw": "localhost:8080/api/usuario/listar",
+=======
+							"raw": "localhost:8080/api/rol/findById/1",
+>>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
 								"api",
+<<<<<<< HEAD
 								"usuario",
 								"listar"
+=======
+								"rol",
+								"findById",
+								"1"
+>>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
 							]
 						}
 					},
 					"response": []
 				},
 				{
+<<<<<<< HEAD
 					"name": "Eliminar Usuario",
+=======
+					"name": "save",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rolID\": \"1\",\r\n    \"nombreRol\": \"Admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/rol/save",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"rol",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteById",
+>>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
 					"request": {
 						"method": "DELETE",
 						"header": [],
 						"url": {
+<<<<<<< HEAD
 							"raw": "localhost:8080/api/usuario/eliminar/10",
+=======
+							"raw": "localhost:8080/api/rol/deleteById/1",
+>>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
 								"api",
+<<<<<<< HEAD
 								"usuario",
 								"eliminar",
 								"10"
+=======
+								"rol",
+								"deleteById",
+								"1"
+>>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
 							]
 						}
 					},
 					"response": []
+<<<<<<< HEAD
+=======
+				},
+				{
+					"name": "re_save",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rolID\": \"1\",\r\n    \"nombreRol\": \"Admin2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/rol/re_save",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"rol",
+								"re_save"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "RolUsuario",
+			"item": [
+				{
+					"name": "CRUD",
+					"item": [
+						{
+							"name": "findAll",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/api/rolusuario/findAll",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"rolusuario",
+										"findAll"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/api/rolusuario/findById/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"rolusuario",
+										"findById",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"rolUsuarioID\": 2,\r\n    \"usuario\": {\r\n        \"usuarioID\": 2\r\n    },\r\n    \"rol\": {\r\n        \"rolID\": 2\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/rolusuario/save",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"rolusuario",
+										"save"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteById",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/api/rolusuario/deleteById/2",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"rolusuario",
+										"deleteById",
+										"2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "joinQuerys",
+					"item": []
+>>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
 				}
 			]
 		},
@@ -285,7 +597,11 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
+<<<<<<< HEAD
 							"raw": "      {  \r\n        \"noIncidencia\": \"INC002\",\r\n        \"nombre\": \"Problema eléctrico\",\r\n        \"ubicacion\": \"Oficina A\",\r\n        \"usuario\": \"u12345\"\r\n      }",
+=======
+							"raw": "      {  \r\n        \"noIncidencia\": \"INC003\",\r\n        \"nombre\": \"Problema eléctrico\",\r\n        \"ubicacion\": \"Oficina A\",\r\n        \"usuario\": \"u12345\"\r\n      }",
+>>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
 							"options": {
 								"raw": {
 									"language": "json"
@@ -313,7 +629,11 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
+<<<<<<< HEAD
 							"raw": "localhost:8080/api/incidencia/eliminar/INC002",
+=======
+							"raw": "localhost:8080/api/incidencia/eliminar/INC003",
+>>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
 							"host": [
 								"localhost"
 							],
@@ -322,6 +642,7 @@
 								"api",
 								"incidencia",
 								"eliminar",
+<<<<<<< HEAD
 								"INC002"
 							]
 						}
@@ -353,6 +674,9 @@
 								"incidencia",
 								"actualizar",
 								"INC001"
+=======
+								"INC003"
+>>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
 							]
 						}
 					},
@@ -836,6 +1160,7 @@
 					"response": []
 				}
 			]
+<<<<<<< HEAD
 		},
 		{
 			"name": "UsuarioRol",
@@ -1048,6 +1373,8 @@
 					"response": []
 				}
 			]
+=======
+>>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
 		}
 	]
 }

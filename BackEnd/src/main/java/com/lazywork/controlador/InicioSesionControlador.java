@@ -14,6 +14,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/iniciosesion")
+<<<<<<< HEAD
 @CrossOrigin("*")
 public class InicioSesionControlador {
 
@@ -24,6 +25,15 @@ public class InicioSesionControlador {
     public InicioSesionControlador(InicioSesionServicios inicioSesionServicios, UsuarioServicio usuarioServicio) {
         this.inicioSesionServicios = inicioSesionServicios;
         this.usuarioServicio = usuarioServicio;
+=======
+public class InicioSesionControlador {
+    private final InicioSesionServicios inicioSesionServicios;
+    @Autowired
+    private UsuarioServicio usuarioServicio;
+    @Autowired
+    public InicioSesionControlador(InicioSesionServicios inicioSesionServicios) {
+        this.inicioSesionServicios = inicioSesionServicios;
+>>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
     }
 
     @GetMapping("/buscarporid/{id}")
@@ -41,12 +51,20 @@ public class InicioSesionControlador {
 
     @PostMapping("/insertar")
     public ResponseEntity<?> insertarInicioSesion(@RequestBody InicioSesion inicioSesion) {
+<<<<<<< HEAD
         if (inicioSesion.getUsuario() == null || inicioSesion.getUsuario().getId() == null) {
+=======
+        if (inicioSesion.getUsuario() == null) {
+>>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
             return new ResponseEntity<>("El usuario no puede ser nulo", HttpStatus.BAD_REQUEST);
         }
 
         Long usuarioId = inicioSesion.getUsuario().getId();
+<<<<<<< HEAD
         if (usuarioServicio.existeUsuario(usuarioId)) {
+=======
+        if (usuarioId != null && usuarioServicio.existeUsuario(usuarioId)) {
+>>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
             inicioSesion.setTiempodesesion(LocalDateTime.now()); // Establece el valor del tiempo de sesión
             InicioSesion nuevoInicioSesion = inicioSesionServicios.insertarInicioSesion(inicioSesion);
             if (nuevoInicioSesion != null) {
@@ -59,6 +77,10 @@ public class InicioSesionControlador {
         }
     }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
     @PutMapping("/actualizar/{id}")
     public ResponseEntity<InicioSesion> actualizarInicioSesion(
             @PathVariable Long id,
