@@ -6,6 +6,13 @@ import org.antlr.v4.runtime.misc.NotNull;
 
 @Entity
 @Table(name = "Usuarios")
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
+>>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Usuario {
 
@@ -23,15 +30,28 @@ public class Usuario {
     @Column(name = "Documento", length = 50, nullable = false)
     private String documento;
 
+<<<<<<< HEAD
     @Column(name = "nivel_soporte")
     private String nivelSoporte;
 
 
+=======
+    @NotNull
+    private String nivelSoporte;
+
+>>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
     // Constructor por defecto
     public Usuario() {
     }
 
     // Constructor con parámetros
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
+>>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
     public Usuario(Long id, String nombre, String apellido, String documento, String nivelSoporte) {
         this.id = id;
         this.nombre = nombre;
@@ -39,6 +59,13 @@ public class Usuario {
         this.documento = documento;
         this.nivelSoporte = nivelSoporte;
     }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
+>>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
     public Long getId() {
         return id;
     }
@@ -89,4 +116,11 @@ public class Usuario {
                 ", nivelSoporte='" + nivelSoporte + '\'' +
                 '}';
     }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+// Ge
+>>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
+>>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
 }

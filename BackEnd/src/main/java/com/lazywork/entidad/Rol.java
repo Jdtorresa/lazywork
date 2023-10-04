@@ -3,13 +3,25 @@ package com.lazywork.entidad;
 import jakarta.persistence.*;
 
 @Entity
+<<<<<<< HEAD
 @Table(name = "Roles")
+=======
+<<<<<<< HEAD
+@Table(name = "Roles")
+=======
+@Table(name = "Rol")
+>>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
+>>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
 public class Rol {
 
     @Id
     /*
     @GeneratedValue(strategy = GenerationType.IDENTITY)
      */
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
     @Column(name = "RolID")
     private Long rolID;
 
@@ -18,6 +30,17 @@ public class Rol {
 
     // Getters y Setters
 
+<<<<<<< HEAD
+=======
+=======
+    @Column
+    private Long rolID;
+
+    @Column(nullable = false, length = 50)
+    private String nombreRol;
+
+>>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
+>>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
     public Long getRolID() {
         return rolID;
     }

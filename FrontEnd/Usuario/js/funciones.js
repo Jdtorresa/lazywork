@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+>>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
 function findById() {
     let errorMensaje = document.querySelector('#errormsg');
     errorMensaje.innerHTML = '';
@@ -44,10 +49,63 @@ function findAll() {
     errorMensaje.innerHTML = '';
     errorMensaje.classList.remove('alert-danger');
     let tabla = document.querySelector("#tableid");
+<<<<<<< HEAD
+=======
+=======
+function findById(){
+    let errorMensaje = document.querySelector('#errormsg')
+    errorMensaje.innerHTML='';
+    errorMensaje.classList.remove('alert-danger')
+    let id=$("#findById").val();
+    let tabla=document.querySelector("#tableid");
+    if (id === '') {
+        errorMensaje.classList.add('alert-danger');
+        $("#errormsg").text("❌ Ingrese un id para realizar la consulta");
+        return;
+    }
+    $.ajax({
+        url: "http://localhost:8080/api/rolusuario/"+ id,
+        type: "GET",
+        dataType: "json",
+        success: function(respuesta){
+            $("#findById").val("");
+            $("#tableid tbody").remove();
+            tabla.innerHTML += '<tr><td>' + respuesta.idUser +
+            '</td><td>' + respuesta.nombre +
+            '</td><td>' + respuesta.apellido +
+            '</td><td>' + respuesta.documento +
+            '</td><td>' + "<a href='#' class='eliminar-link' data-bs-toggle='modal' data-bs-target='#exampleModal' onclick='eliminarUsuario(\""+respuesta.idUser+"\")'> <i class='material-icons'>delete</i></a> <a href='#' class='editar-link' data-bs-toggle='modal' data-bs-target='#actualizarModal' onclick='cargarDatos(\""+respuesta.idUser+"\")'> <i class='material-icons'>edit</i></a>" +
+            '</td></tr>';         
+        },
+        error: function(xhr) {
+            if(xhr.status===404){
+                errorMensaje.classList.add('alert-danger');
+                $("#errormsg").text("❌ El id "+ id +" no se encontro...");
+                return;
+            }
+        }
+    })
+}
+function buscarUsuarioIdParametro(id){
+    let id=$("#findById").val(id);
+    buscarUsuarioId()
+}
+
+function listarUsuarios(){
+    let errorMensaje = document.querySelector('#errormsg')
+    errorMensaje.innerHTML='';
+    errorMensaje.classList.remove('alert-danger')
+    let tabla=document.querySelector("#tableid");
+>>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
+>>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
     $.ajax({
         url: "http://localhost:8080/api/usuario/listar",
         type: "GET",
         dataType: "json",
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
         success: function (usuario) {
             $("#tableid tbody").remove();
             usuario.forEach(function (usuario) {
@@ -84,20 +142,88 @@ function crear() {
     };
     $.ajax({
         url: "http://localhost:8080/api/usuario/crear",
+<<<<<<< HEAD
+=======
+=======
+        success: function(respuesta){
+            $("#tableid tbody").remove();
+            for(i=0;i<respuesta.length;i++){
+                tabla.innerHTML += '<tr><td>' + respuesta[i].idUser +
+                '</td><td>' + respuesta[i].nombre +
+                '</td><td>' + respuesta[i].apellido +
+                '</td><td>' + respuesta[i].documento +
+                '</td><td>' + "<a href='#' class='eliminar-link' data-bs-toggle='modal' data-bs-target='#exampleModal' onclick='eliminarUsuario(\""+respuesta[i].idUser+"\")'> <i class='material-icons'>delete</i></a> <a href='#' class='editar-link' data-bs-toggle='modal' data-bs-target='#actualizarModal' onclick='cargarDatos(\""+respuesta[i].idUser+"\")'> <i class='material-icons'>edit</i></a>" +
+                '</td></tr>';
+            }      
+        }
+    })
+}
+
+function insertarInicio() {
+    let errorModal = document.querySelector('#errormodal')
+    errorModal.innerHTML='';
+    errorModal.classList.remove('alert-danger')
+    let idInicio = $("#idInicio").val();
+    
+    let hora = $("#" + tipo + "hora").val(); // Nuevo campo para "inicio"
+    let fecha = $("#" + tipo + "fecha").val(); // Nuevo campo para "inicio"
+    let nombre = $("#" + tipo + "nombre").val();
+    let apellido = $("#" + tipo + "apellido").val();
+    let documento = $("#" + tipo + "documento").val();
+
+    if (idInicio === '' || isNaN(idInicio)) {
+        errorModal.classList.add('alert-danger');
+        $("#errormodal").text("❌ Ingrese un ID de inicio válido...");
+        return;
+    }
+     let data = {
+        idInicio: idInicio,
+        hora: hora, // Reemplaza 'hora' y 'fecha' con tus valores correctos
+        fecha: fecha
+    }
+    
+    $.ajax({
+        url: "http://localhost:8080/api/inicio/insertar",
+>>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
+>>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
         type: "POST",
         data: JSON.stringify(data),
         contentType: "application/json",
         success: function () {
             $("#registrarModal").modal("hide");
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
             $("#nombre").val('');
             $("#apellido").val('');
             $("#documento").val('');
             $("#nivelSoporte").val('');
             findAll();
+<<<<<<< HEAD
+=======
+=======
+            $("#" + tipo + "nombre").val('');
+            $("#" + tipo + "apellido").val('');
+            $("#" + tipo + "documento").val('');
+            $("#" + tipo + "id").val('');
+            
+            // Llamar a la función correspondiente para listar (listarUsuarios o listarInicios)
+            if (tipo === "usuario") {
+                listarUsuarios();
+            } else if (tipo === "inicio") {
+                listarInicios();
+            }
+>>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
+>>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
         },
         error: function (xhr) {
             if (xhr.status === 409) {
                 errorModal.classList.add('alert-danger');
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
                 $("#errormodal").text("❌ Ya existe un usuario con los mismos datos...");
                 return;
             }
@@ -118,10 +244,35 @@ function actualizarUsuario() {
     let documento = $("#documentoAC").val();
     let nivelSoporte = $("#nivelSoporteAC").val();
     if (idAConsultar === '' || nombre === '' || apellido === '' || documento === '' || nivelSoporte === '') {
+<<<<<<< HEAD
+=======
+=======
+                $("#errormodal").text("❌ El id " + id + " ya existe, ingrese otro...");
+                return;
+            }
+        }
+    })
+}
+
+function actualizarUsuarios(){
+    let errorModal = document.querySelector('#errorAc')
+    errorModal.innerHTML='';
+    errorModal.classList.remove('alert-danger')
+    let id=$("#idAC").val();
+    let nombre=$("#nombreAC").val();
+    let apellido=$("#apellidoAC").val();
+    let documento=$("#documentoAC").val();
+    if (id === '' || nombre === '' || apellido ==='' || documento === '') {
+>>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
+>>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
         errorModal.classList.add('alert-danger');
         $("#errorAc").text("❌ Ingrese todos los campos requeridos para actualizar...");
         return;
     }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
     let data = {
         nombre: nombre,
         apellido: apellido,
@@ -149,6 +300,7 @@ function actualizarUsuario() {
 }
 
 function eliminarUsuario(idUsuario) {
+<<<<<<< HEAD
     console.log("ID del usuario a eliminar: " + idUsuario);
     $("#confirmarEliminacion").off("click").on("click", function () {
         $.ajax({
@@ -160,10 +312,68 @@ function eliminarUsuario(idUsuario) {
             },
             error: function (xhr) {
                 // Handle errors if necessary
+=======
+    // Imprime el ID del usuario a eliminar en la consola
+    console.log("ID del usuario a eliminar: " + idUsuario);
+
+    // Configura un manejador de clic en el botón de confirmación
+    $("#confirmarEliminacion").off("click").on("click", function () {
+        // Realiza una solicitud AJAX para eliminar el usuario
+        $.ajax({
+            // Especifica la URL del servicio web para eliminar el usuario
+            url: "http://localhost:8080/api/usuario/eliminar/" + idUsuario,
+            // Especifica el tipo de solicitud como DELETE
+            type: "DELETE",
+            success: function () {
+                // En caso de éxito, elimina la fila correspondiente en la tabla de la interfaz de usuario
+                $("#tableid tbody").find("td:contains('" + idUsuario + "')").closest("tr").remove();
+            },
+            error: function (xhr) {
+                // Maneja los errores si es necesario
+                // Puedes agregar código aquí para manejar los errores de la solicitud
+=======
+    data={
+        idUser: id,
+        nombre: nombre,
+        apellido: apellido,
+        documento: documento
+    }
+    $.ajax({
+        url:"http://localhost:8080/api/usuario/actualizar/" + id,
+        type:"PUT",
+        data: JSON.stringify(data),
+        contentType:"application/json",
+        success: function(){
+            $("#actualizarModal").modal("hide");
+            $("#nombreAC").val('');
+            $("#apellidoAC").val('');
+            $("#documentoAC").val('');
+            $("#idAC").val('');    
+        },
+        error: function(xhr) {
+        }  
+    })
+}
+
+function eliminarUsuario(idUser) {
+    $("#confirmarEliminacion").off("click").on("click", function () {
+        $.ajax({
+            url: "http://localhost:8080/api/usuario/eliminar/" + idUser,
+            type: "DELETE",
+            success: function () {
+                $("#tableid tbody").find("td:contains('" + idUser + "')").closest("tr").remove();
+                $("#exampleModal").modal("hide");
+>>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
+>>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
             }
         });
     });
 }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+>>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
 
 function cargarDatos(idUsuario) {
     $.ajax({
@@ -187,4 +397,33 @@ document.getElementById("nuevoUserId").addEventListener("keydown", function (eve
         event.preventDefault();
         findById();
     }
+<<<<<<< HEAD
 });
+=======
+});
+
+=======
+function cargarDatos(idUser){
+    $.ajax({
+        url: "http://localhost:8080/api/usuario/"+ idUser,
+        type: "GET",
+        dataType: "json",
+        success: function(respuesta){
+            $("#actu input").val('');
+            $("#idAC").val(respuesta.idUser);
+            $("#idAC").prop('disabled', true);
+            $("#nombreAC").val(respuesta.nombre);
+            $("#apellidoAC").val(respuesta.apellido);
+            $("#documentoAC").val(respuesta.documento);
+        }
+    })
+}
+
+document.findById("findById").addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        buscarUsuarioId(); 
+    }
+})
+>>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
+>>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20

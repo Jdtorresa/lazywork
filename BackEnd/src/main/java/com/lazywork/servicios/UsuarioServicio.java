@@ -18,7 +18,14 @@ public class UsuarioServicio {
         UsuarioServicio.usuarioRepository = usuarioRepository;
     }
 
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
+>>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
     public static boolean existeUsuario(Long usuarioId) {
         // Utiliza el repositorio de usuarios para buscar el usuario por su ID.
         Optional<Usuario> usuarioOptional = usuarioRepository.findById(String.valueOf(usuarioId));
