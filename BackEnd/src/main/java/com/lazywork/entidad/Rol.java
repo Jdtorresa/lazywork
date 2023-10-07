@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 @Entity
 <<<<<<< HEAD
+<<<<<<< HEAD
 @Table(name = "Roles")
 =======
 <<<<<<< HEAD
@@ -12,11 +13,15 @@ import jakarta.persistence.*;
 @Table(name = "Rol")
 >>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
 >>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
+=======
+@Table(name = "Roles")
+>>>>>>> fbb46fbc5a742f773e8d4cc598720ff2a6133e05
 public class Rol {
 
     @Id
-    /*
+
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+<<<<<<< HEAD
      */
 <<<<<<< HEAD
 =======
@@ -34,13 +39,22 @@ public class Rol {
 =======
 =======
     @Column
+=======
+
+    @Column(name = "RolID")
+>>>>>>> fbb46fbc5a742f773e8d4cc598720ff2a6133e05
     private Long rolID;
 
-    @Column(nullable = false, length = 50)
+    @Column(name = "NombreRol", nullable = false)
     private String nombreRol;
 
+<<<<<<< HEAD
 >>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
 >>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
+=======
+    // Getters y Setters
+
+>>>>>>> fbb46fbc5a742f773e8d4cc598720ff2a6133e05
     public Long getRolID() {
         return rolID;
     }

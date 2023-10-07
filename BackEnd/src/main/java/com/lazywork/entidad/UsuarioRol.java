@@ -7,9 +7,15 @@ import jakarta.persistence.*;
 public class UsuarioRol {
 
     @Id
+<<<<<<< HEAD
     /*
     @GeneratedValue(strategy = GenerationType.IDENTITY)
      */
+=======
+
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+>>>>>>> fbb46fbc5a742f773e8d4cc598720ff2a6133e05
     @Column(name = "UsuarioRolID")
     private Long usuarioRolID;
 

@@ -21,18 +21,22 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 =======
 
 >>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
 >>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
+=======
+>>>>>>> fbb46fbc5a742f773e8d4cc598720ff2a6133e05
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/usuario")
+<<<<<<< HEAD
 <<<<<<< HEAD
 @CrossOrigin("*")
 =======
@@ -42,6 +46,9 @@ import java.util.Optional;
 @CrossOrigin(origins = "http://127.0.0.1:5500")
 >>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
 >>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
+=======
+@CrossOrigin("*")
+>>>>>>> fbb46fbc5a742f773e8d4cc598720ff2a6133e05
  // Cambia esto al origen de tu sitio web
 public class UsuarioControlador {
 >>>>>>> 17438130d6ae7a17ebb9d93a3b93206300c4f7c3
@@ -76,6 +83,7 @@ public class UsuarioControlador {
         this.usuarioServicio = usuarioServicio;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 =======
@@ -83,6 +91,8 @@ public class UsuarioControlador {
 
 >>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
 >>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
+=======
+>>>>>>> fbb46fbc5a742f773e8d4cc598720ff2a6133e05
     @PostMapping("/crear")
     public ResponseEntity<?> crearUsuario(@Validated @RequestBody Usuario nuevoUsuario, BindingResult result) {
         // Verifica si hay errores de validación
@@ -95,15 +105,21 @@ public class UsuarioControlador {
         return new ResponseEntity<>("Usuario creado exitosamente", HttpStatus.CREATED);
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
     @GetMapping("/buscarporid/{id}")
     public ResponseEntity<Usuario> findById(@PathVariable String id) {
+=======
+    @GetMapping("/buscarporid/{id}")
+    public ResponseEntity<Usuario> findById(@PathVariable Long id) {
+>>>>>>> fbb46fbc5a742f773e8d4cc598720ff2a6133e05
         Optional<Usuario> usuario = usuarioServicio.findById(id);
         return usuario.map(value -> new ResponseEntity<>(value, HttpStatus.OK))
                 .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
+<<<<<<< HEAD
 >>>>>>> 17438130d6ae7a17ebb9d93a3b93206300c4f7c3
 
             // Resto de la lógica para crear y guardar el usuario
@@ -116,29 +132,24 @@ public class UsuarioControlador {
 <<<<<<< HEAD
 =======
 =======
+=======
+>>>>>>> fbb46fbc5a742f773e8d4cc598720ff2a6133e05
 
-        @GetMapping("/buscarporid/{id}")
-        public ResponseEntity<Usuario> findById(@PathVariable String id) {
-            Optional<Usuario> usuario = usuarioServicio.findById(id);
-            return usuario.map(value -> new ResponseEntity<>(value, HttpStatus.OK))
-                    .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
-        }
+    @GetMapping("/listar")
+    public ResponseEntity<List<Usuario>> findAll() {
+        return new ResponseEntity<>(usuarioServicio.findAll(), HttpStatus.OK);
+    }
 
-        @GetMapping("/listar")
-        public ResponseEntity<List<Usuario>> findAll() {
-            return new ResponseEntity<>(usuarioServicio.findAll(), HttpStatus.OK);
+    @DeleteMapping("/eliminar/{id}")
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
+        Optional<Usuario> usuario = usuarioServicio.findById(id);
+        if (usuario.isPresent()) {
+            usuarioServicio.delete(id);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-
-        @DeleteMapping("/eliminar/{id}")
-        public ResponseEntity<Void> delete(@PathVariable String id) {
-            Optional<Usuario> usuario = usuarioServicio.findById(id);
-            if (usuario.isPresent()) {
-                usuarioServicio.delete(id);
-                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-            } else {
-                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-            }
-        }
+<<<<<<< HEAD
 >>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
 >>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
 >>>>>>> 17438130d6ae7a17ebb9d93a3b93206300c4f7c3
@@ -148,6 +159,17 @@ public class UsuarioControlador {
             Optional<Usuario> usuario = usuarioServicio.findById(id);
             return usuario.map(value -> new ResponseEntity<>(value, HttpStatus.OK))
                     .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
+=======
+    }
+
+    @PutMapping("/actualizar/{id}")
+    public ResponseEntity<Usuario> actualizarUsuario(@RequestBody Usuario usuarioActualizado, @PathVariable Long id) {
+        try {
+            Usuario usuarioGuardado = usuarioServicio.actualizarUsuario(id, usuarioActualizado);
+            return new ResponseEntity<>(usuarioGuardado, HttpStatus.OK);
+        } catch (NoSuchElementException e) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+>>>>>>> fbb46fbc5a742f773e8d4cc598720ff2a6133e05
         }
 
         @GetMapping("/listar")

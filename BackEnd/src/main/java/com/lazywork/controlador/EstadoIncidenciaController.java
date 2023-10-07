@@ -9,18 +9,18 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
-
+@CrossOrigin("*")
 @RestController
-@RequestMapping("/estados ")
+@RequestMapping("/estados")
 
 public class EstadoIncidenciaController {
 
     @Autowired
     EstadosIncidenciasService estadosIncidenciasService;
 
-    @GetMapping
+    @GetMapping("/listar")
     public ResponseEntity<List<EstadoIncidencia>> obtenerTodasLosEstadosIncidencia() {
-        List<EstadoIncidencia> estadoIncidencias = estadosIncidenciasService.obtenerTodasLosEstadosIncidencias();
+        List<EstadoIncidencia> estadoIncidencias = estadosIncidenciasService.obtenerTodosLosEstadosIncidencias();
         return ResponseEntity.ok(estadoIncidencias);
     }
 
@@ -34,17 +34,17 @@ public class EstadoIncidenciaController {
         }
     }
 
-    @PostMapping
+    @PostMapping ("/crear")
     public ResponseEntity<EstadoIncidencia> crearEstadosIncidencias(@RequestBody EstadoIncidencia estadoIncidencia) {
         EstadoIncidencia estadosIncidenciasCreada = estadosIncidenciasService.crearEstadosIncidencias(estadoIncidencia);
         return ResponseEntity.status(HttpStatus.CREATED).body(estadosIncidenciasCreada);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/actualizar/{id}")
     public ResponseEntity<EstadoIncidencia> actualizarEstadosIncidencias(@PathVariable Long id, @RequestBody EstadoIncidencia estadoIncidencia) {
         Optional<EstadoIncidencia>estadoIncidenciasActual = estadosIncidenciasService.obtenerEstadosIncidenciasPorId(id);
         if (estadoIncidenciasActual.isPresent()) {
-            estadoIncidencia.setId(id);
+            estadoIncidencia.setEstadoID(id);
             EstadoIncidencia actualizarEstadosIncidencias = estadosIncidenciasService.actualizarEstadosIncidencias(estadoIncidencia);
             return ResponseEntity.ok(actualizarEstadosIncidencias);
         } else {
@@ -52,7 +52,7 @@ public class EstadoIncidenciaController {
         }
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/eliminar/{id}")
     public ResponseEntity<Void> eliminarEstadosIncidencias(@PathVariable Long id) {
         estadosIncidenciasService.eliminarEstadosIncidencias(id);
         return ResponseEntity.noContent().build();

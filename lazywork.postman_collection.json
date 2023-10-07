@@ -1,6 +1,7 @@
 {
 	"info": {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		"_postman_id": "2f9e7ebd-507e-43e1-8b81-ee11274bfb24",
 =======
 <<<<<<< HEAD
@@ -9,6 +10,9 @@
 		"_postman_id": "a230666b-f073-40fe-ab82-d53a432ee753",
 >>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
 >>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
+=======
+		"_postman_id": "2f9e7ebd-507e-43e1-8b81-ee11274bfb24",
+>>>>>>> fbb46fbc5a742f773e8d4cc598720ff2a6133e05
 		"name": "lazywork",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "26127259"
@@ -18,6 +22,7 @@
 			"name": "Usuario",
 			"item": [
 				{
+<<<<<<< HEAD
 <<<<<<< HEAD
 					"name": "Insertar Usuario",
 =======
@@ -68,11 +73,15 @@
 					"name": "save",
 >>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
 >>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
+=======
+					"name": "Insertar Usuario",
+>>>>>>> fbb46fbc5a742f773e8d4cc598720ff2a6133e05
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
+<<<<<<< HEAD
 <<<<<<< HEAD
 							"raw": "{\r\n  \"idUser\": \"12345\",\r\n  \"nombre\": \"Juan\",\r\n  \"apellido\": \"Pérez\",\r\n  \"documento\": \"1234567890\"\r\n}",
 =======
@@ -82,6 +91,9 @@
 							"raw": "{\r\n    \"usuarioID\": \"1\",\r\n    \"codigoUnico\": \"COD123\",\r\n    \"nombre\": \"Julian\",\r\n    \"apellido\": \"Guzman\",\r\n    \"documento\": \"1030536034\",\r\n    \"nivelSoporte\": \"Alto\",\r\n    \"tiempoUsoSistemaMinutos\": \"60\"\r\n}",
 >>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
 >>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
+=======
+							"raw": "{\r\n  \"idUser\": \"12345\",\r\n  \"nombre\": \"Juan\",\r\n  \"apellido\": \"Pérez\",\r\n  \"documento\": \"1234567890\"\r\n}",
+>>>>>>> fbb46fbc5a742f773e8d4cc598720ff2a6133e05
 							"options": {
 								"raw": {
 									"language": "json"
@@ -89,6 +101,7 @@
 							}
 						},
 						"url": {
+<<<<<<< HEAD
 <<<<<<< HEAD
 							"raw": "localhost:8080/api/usuario/insertar",
 =======
@@ -98,6 +111,9 @@
 							"raw": "localhost:8080/api/usuario/save",
 >>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
 >>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
+=======
+							"raw": "localhost:8080/api/usuario/insertar",
+>>>>>>> fbb46fbc5a742f773e8d4cc598720ff2a6133e05
 							"host": [
 								"localhost"
 							],
@@ -105,6 +121,7 @@
 							"path": [
 								"api",
 								"usuario",
+<<<<<<< HEAD
 <<<<<<< HEAD
 								"insertar"
 =======
@@ -114,12 +131,16 @@
 								"save"
 >>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
 >>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
+=======
+								"insertar"
+>>>>>>> fbb46fbc5a742f773e8d4cc598720ff2a6133e05
 							]
 						}
 					},
 					"response": []
 				},
 				{
+<<<<<<< HEAD
 <<<<<<< HEAD
 					"name": "Actualizar Usuario",
 =======
@@ -150,11 +171,15 @@
 					"name": "re_save",
 >>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
 >>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
+=======
+					"name": "Actualizar Usuario",
+>>>>>>> fbb46fbc5a742f773e8d4cc598720ff2a6133e05
 					"request": {
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
+<<<<<<< HEAD
 <<<<<<< HEAD
 							"raw": "{\r\n  \"idUser\": \"u12345\",\r\n  \"nombre\": \"Juan\",\r\n  \"apellido\": \"David\",\r\n  \"documento\": \"1234567890\"\r\n}",
 =======
@@ -164,6 +189,9 @@
 							"raw": "{\r\n    \"usuarioID\": \"1\",\r\n    \"codigoUnico\": \"COD123\",\r\n    \"nombre\": \"Laura\",\r\n    \"apellido\": \"Guzman\",\r\n    \"documento\": \"1030536034\",\r\n    \"nivelSoporte\": \"Alto\",\r\n    \"tiempoUsoSistemaMinutos\": \"60\"\r\n}",
 >>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
 >>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
+=======
+							"raw": "{\r\n  \"idUser\": \"u12345\",\r\n  \"nombre\": \"Juan\",\r\n  \"apellido\": \"David\",\r\n  \"documento\": \"1234567890\"\r\n}",
+>>>>>>> fbb46fbc5a742f773e8d4cc598720ff2a6133e05
 							"options": {
 								"raw": {
 									"language": "json"
@@ -171,6 +199,7 @@
 							}
 						},
 						"url": {
+<<<<<<< HEAD
 <<<<<<< HEAD
 							"raw": "localhost:8080/api/usuario/actualizar/u12345",
 =======
@@ -180,6 +209,9 @@
 							"raw": "localhost:8080/api/usuario/re_save",
 >>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
 >>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
+=======
+							"raw": "localhost:8080/api/usuario/actualizar/u12345",
+>>>>>>> fbb46fbc5a742f773e8d4cc598720ff2a6133e05
 							"host": [
 								"localhost"
 							],
@@ -187,6 +219,7 @@
 							"path": [
 								"api",
 								"usuario",
+<<<<<<< HEAD
 <<<<<<< HEAD
 								"actualizar",
 								"u12345"
@@ -198,10 +231,15 @@
 								"re_save"
 >>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
 >>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
+=======
+								"actualizar",
+								"u12345"
+>>>>>>> fbb46fbc5a742f773e8d4cc598720ff2a6133e05
 							]
 						}
 					},
 					"response": []
+<<<<<<< HEAD
 <<<<<<< HEAD
 				},
 				{
@@ -222,10 +260,16 @@
 					"name": "findAll",
 >>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
 >>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
+=======
+				},
+				{
+					"name": "Consulta ID",
+>>>>>>> fbb46fbc5a742f773e8d4cc598720ff2a6133e05
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
+<<<<<<< HEAD
 <<<<<<< HEAD
 							"raw": "localhost:8080/api/usuario/u12345",
 =======
@@ -235,12 +279,16 @@
 							"raw": "localhost:8080/api/rol/findAll",
 >>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
 >>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
+=======
+							"raw": "localhost:8080/api/usuario/u12345",
+>>>>>>> fbb46fbc5a742f773e8d4cc598720ff2a6133e05
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
 								"api",
+<<<<<<< HEAD
 <<<<<<< HEAD
 								"usuario",
 								"u12345"
@@ -253,12 +301,17 @@
 								"findAll"
 >>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
 >>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
+=======
+								"usuario",
+								"u12345"
+>>>>>>> fbb46fbc5a742f773e8d4cc598720ff2a6133e05
 							]
 						}
 					},
 					"response": []
 				},
 				{
+<<<<<<< HEAD
 <<<<<<< HEAD
 					"name": "Consultar lista",
 =======
@@ -268,10 +321,14 @@
 					"name": "finById",
 >>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
 >>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
+=======
+					"name": "Consultar lista",
+>>>>>>> fbb46fbc5a742f773e8d4cc598720ff2a6133e05
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
+<<<<<<< HEAD
 <<<<<<< HEAD
 							"raw": "localhost:8080/api/usuario/listar",
 =======
@@ -281,12 +338,16 @@
 							"raw": "localhost:8080/api/rol/findById/1",
 >>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
 >>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
+=======
+							"raw": "localhost:8080/api/usuario/listar",
+>>>>>>> fbb46fbc5a742f773e8d4cc598720ff2a6133e05
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
 								"api",
+<<<<<<< HEAD
 <<<<<<< HEAD
 								"usuario",
 								"listar"
@@ -300,12 +361,17 @@
 								"1"
 >>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
 >>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
+=======
+								"usuario",
+								"listar"
+>>>>>>> fbb46fbc5a742f773e8d4cc598720ff2a6133e05
 							]
 						}
 					},
 					"response": []
 				},
 				{
+<<<<<<< HEAD
 <<<<<<< HEAD
 					"name": "Eliminar Usuario",
 =======
@@ -344,10 +410,14 @@
 					"name": "deleteById",
 >>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
 >>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
+=======
+					"name": "Eliminar Usuario",
+>>>>>>> fbb46fbc5a742f773e8d4cc598720ff2a6133e05
 					"request": {
 						"method": "DELETE",
 						"header": [],
 						"url": {
+<<<<<<< HEAD
 <<<<<<< HEAD
 							"raw": "localhost:8080/api/usuario/eliminar/10",
 =======
@@ -357,12 +427,16 @@
 							"raw": "localhost:8080/api/rol/deleteById/1",
 >>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
 >>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
+=======
+							"raw": "localhost:8080/api/usuario/eliminar/10",
+>>>>>>> fbb46fbc5a742f773e8d4cc598720ff2a6133e05
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
 								"api",
+<<<<<<< HEAD
 <<<<<<< HEAD
 								"usuario",
 								"eliminar",
@@ -378,10 +452,16 @@
 								"1"
 >>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
 >>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
+=======
+								"usuario",
+								"eliminar",
+								"10"
+>>>>>>> fbb46fbc5a742f773e8d4cc598720ff2a6133e05
 							]
 						}
 					},
 					"response": []
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -522,6 +602,8 @@
 					"item": []
 >>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
 >>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
+=======
+>>>>>>> fbb46fbc5a742f773e8d4cc598720ff2a6133e05
 				}
 			]
 		},
@@ -680,6 +762,7 @@
 						"body": {
 							"mode": "raw",
 <<<<<<< HEAD
+<<<<<<< HEAD
 							"raw": "      {  \r\n        \"noIncidencia\": \"INC002\",\r\n        \"nombre\": \"Problema eléctrico\",\r\n        \"ubicacion\": \"Oficina A\",\r\n        \"usuario\": \"u12345\"\r\n      }",
 =======
 <<<<<<< HEAD
@@ -688,6 +771,9 @@
 							"raw": "      {  \r\n        \"noIncidencia\": \"INC003\",\r\n        \"nombre\": \"Problema eléctrico\",\r\n        \"ubicacion\": \"Oficina A\",\r\n        \"usuario\": \"u12345\"\r\n      }",
 >>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
 >>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
+=======
+							"raw": "      {  \r\n        \"noIncidencia\": \"INC002\",\r\n        \"nombre\": \"Problema eléctrico\",\r\n        \"ubicacion\": \"Oficina A\",\r\n        \"usuario\": \"u12345\"\r\n      }",
+>>>>>>> fbb46fbc5a742f773e8d4cc598720ff2a6133e05
 							"options": {
 								"raw": {
 									"language": "json"
@@ -716,6 +802,7 @@
 						"header": [],
 						"url": {
 <<<<<<< HEAD
+<<<<<<< HEAD
 							"raw": "localhost:8080/api/incidencia/eliminar/INC002",
 =======
 <<<<<<< HEAD
@@ -724,6 +811,9 @@
 							"raw": "localhost:8080/api/incidencia/eliminar/INC003",
 >>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
 >>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
+=======
+							"raw": "localhost:8080/api/incidencia/eliminar/INC002",
+>>>>>>> fbb46fbc5a742f773e8d4cc598720ff2a6133e05
 							"host": [
 								"localhost"
 							],
@@ -733,9 +823,12 @@
 								"incidencia",
 								"eliminar",
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
+=======
+>>>>>>> fbb46fbc5a742f773e8d4cc598720ff2a6133e05
 								"INC002"
 							]
 						}
@@ -768,11 +861,14 @@
 								"actualizar",
 								"INC001"
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 								"INC003"
 >>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
 >>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
+=======
+>>>>>>> fbb46fbc5a742f773e8d4cc598720ff2a6133e05
 							]
 						}
 					},
@@ -1257,9 +1353,12 @@
 				}
 			]
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
+=======
+>>>>>>> fbb46fbc5a742f773e8d4cc598720ff2a6133e05
 		},
 		{
 			"name": "UsuarioRol",
@@ -1473,10 +1572,13 @@
 				}
 			]
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
 >>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
+=======
+>>>>>>> fbb46fbc5a742f773e8d4cc598720ff2a6133e05
 		}
 	]
 }

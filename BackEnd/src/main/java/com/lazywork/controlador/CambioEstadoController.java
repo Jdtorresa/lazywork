@@ -1,17 +1,17 @@
 package com.lazywork.controlador;
 
-
 import com.lazywork.entidad.CambioEstado;
 import com.lazywork.servicios.CambioEstadoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
 
+@CrossOrigin("*")
 @RestController
+<<<<<<< HEAD
 @RequestMapping("/cambio-estado")
 <<<<<<< HEAD
 @CrossOrigin("*")
@@ -21,6 +21,9 @@ import java.util.Optional;
 =======
 >>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
 >>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
+=======
+@RequestMapping("/cambioestado")
+>>>>>>> fbb46fbc5a742f773e8d4cc598720ff2a6133e05
 public class CambioEstadoController {
 
     @Autowired
@@ -44,6 +47,7 @@ public class CambioEstadoController {
 
     @GetMapping("/{id}")
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
@@ -60,6 +64,12 @@ public class CambioEstadoController {
             return ResponseEntity.ok(cambioestado.get());
 >>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
 >>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
+=======
+    public ResponseEntity<CambioEstado> obtenerCambioEstadoPorId(@PathVariable Long id) {
+        Optional<CambioEstado> cambioEstado = cambioEstadoService.obtenerCambioEstadoPorId(id);
+        if (cambioEstado.isPresent()) {
+            return ResponseEntity.ok(cambioEstado.get());
+>>>>>>> fbb46fbc5a742f773e8d4cc598720ff2a6133e05
         } else {
             return ResponseEntity.notFound().build();
         }
@@ -81,27 +91,31 @@ public class CambioEstadoController {
 =======
 =======
     @PostMapping("/crear")
-    public ResponseEntity<CambioEstado> crearCambioestado(@RequestBody CambioEstado cambioEstado) {
-        CambioEstado cambioestadoCreado = cambioEstadoService.crearCambioEstado(cambioEstado);
-        return ResponseEntity.status(HttpStatus.CREATED).body(cambioestadoCreado);
+    public ResponseEntity<CambioEstado> crearCambioEstado(@RequestBody CambioEstado cambioEstadoB) {
+        cambioEstadoService.crearCambioEstado(cambioEstadoB);
+        return ResponseEntity.ok(cambioEstadoB);
     }
+
     @PutMapping("/actualizar/{id}")
-    public ResponseEntity<CambioEstado> actualizarCambioestado(@PathVariable Long id, @RequestBody CambioEstado cambioEstado){
-        Optional<CambioEstado> cambioestadoActual = cambioEstadoService.obtenerCambioEstadoPorId((id));
-        if (cambioestadoActual.isPresent()) {
-            cambioEstado.setId(id);
-            CambioEstado cambioestadoActualizado = cambioEstadoService.actualizarCambioEstado(cambioEstado);
-            return ResponseEntity.ok(cambioestadoActualizado);
-        }else {
+    public ResponseEntity<CambioEstado> actualizarCambioEstado(@PathVariable Long id, @RequestBody CambioEstado cambioEstadoB) {
+        Optional<CambioEstado> cambioEstado = cambioEstadoService.obtenerCambioEstadoPorId(cambioEstadoB.getCambioEstadoID());
+        if (cambioEstado.isPresent()) {
+            cambioEstadoService.crearCambioEstado( cambioEstadoB);
+            return ResponseEntity.ok(cambioEstado.get());
+        } else {
             return ResponseEntity.notFound().build();
         }
-
     }
 
+<<<<<<< HEAD
     @DeleteMapping("/delete{id}")
     public ResponseEntity<Void> eliminarcambioEstado(@PathVariable Long id) {
 >>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
 >>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
+=======
+    @DeleteMapping("/eliminar/{id}")
+    public ResponseEntity<Void> eliminarCambioEstado(@PathVariable Long id) {
+>>>>>>> fbb46fbc5a742f773e8d4cc598720ff2a6133e05
         cambioEstadoService.eliminarCambioEstado(id);
         return ResponseEntity.noContent().build();
     }

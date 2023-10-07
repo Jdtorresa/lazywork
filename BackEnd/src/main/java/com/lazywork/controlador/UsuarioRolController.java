@@ -48,7 +48,11 @@ public class UsuarioRolController {
     @PostMapping("/save")
     public ResponseEntity<Void> save(@RequestBody UsuarioRol usuarioRol) {
         if(servUsuarioRol.existsById(String.valueOf(usuarioRol.getUsuarioRolID())) == false){
+<<<<<<< HEAD
             if(servUsuario.findById(String.valueOf(usuarioRol.getUsuario().getId())).isPresent() && servRol.existsById(String.valueOf(usuarioRol.getRol().getRolID())) && servUsuarioRol.existsUsuario(String.valueOf(usuarioRol.getUsuario().getId())).isEmpty()){
+=======
+            if(servUsuario.findById((usuarioRol.getUsuario().getId())).isPresent() && servRol.existsById(String.valueOf(usuarioRol.getRol().getRolID())) && servUsuarioRol.existsUsuario(String.valueOf(usuarioRol.getUsuario().getId())).isEmpty()){
+>>>>>>> fbb46fbc5a742f773e8d4cc598720ff2a6133e05
                 servUsuarioRol.save(usuarioRol);
                 return ResponseEntity.status(HttpStatus.CREATED).build();
             }else{
