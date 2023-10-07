@@ -1,5 +1,17 @@
 package com.lazywork.entidad;
+<<<<<<< HEAD
 import jakarta.persistence.*;
+=======
+<<<<<<< HEAD
+import jakarta.persistence.*;
+=======
+
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
+import jakarta.persistence.*;
+
+>>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
+>>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
 import java.time.LocalDateTime;
 
 @Entity
@@ -15,7 +27,14 @@ public class InicioSesion {
     @JoinColumn(name = "UsuarioID", referencedColumnName = "UsuarioID", nullable = false)
     private Usuario usuario;
 
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
+>>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
     @Column(nullable = false)
     private LocalDateTime tiempodesesion;
 
@@ -25,6 +44,13 @@ public class InicioSesion {
 
     @Column(nullable = true)
     private LocalDateTime FechaHoraFin;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
+>>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
     // Constructor por defecto
     public InicioSesion() {
     }
@@ -70,7 +96,14 @@ public class InicioSesion {
     }
 // Puedes agregar otros métodos y personalizar la entidad según tus necesidades
 
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
+>>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
     @Override
     public String toString() {
         return "InicioSesion{" +

@@ -7,14 +7,38 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+<<<<<<< HEAD
+=======
+
+>>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/iniciosesion")
+<<<<<<< HEAD
 @CrossOrigin(origins = "http://127.0.0.1:5500") // Cambia esto al origen de tu sitio web
+=======
+<<<<<<< HEAD
+@CrossOrigin("*")
+>>>>>>> 17438130d6ae7a17ebb9d93a3b93206300c4f7c3
 public class InicioSesionControlador {
+=======
+<<<<<<< HEAD
+@CrossOrigin("*")
+public class InicioSesionControlador {
+
+    private final InicioSesionServicios inicioSesionServicios;
+    private final UsuarioServicio usuarioServicio;
+
+    @Autowired
+    public InicioSesionControlador(InicioSesionServicios inicioSesionServicios, UsuarioServicio usuarioServicio) {
+        this.inicioSesionServicios = inicioSesionServicios;
+        this.usuarioServicio = usuarioServicio;
+=======
+public class InicioSesionControlador {
+>>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
     private final InicioSesionServicios inicioSesionServicios;
     @Autowired
     private UsuarioServicio usuarioServicio;
@@ -22,6 +46,10 @@ public class InicioSesionControlador {
     @Autowired
     public InicioSesionControlador(InicioSesionServicios inicioSesionServicios) {
         this.inicioSesionServicios = inicioSesionServicios;
+<<<<<<< HEAD
+=======
+>>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
+>>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
     }
 
 
@@ -39,14 +67,31 @@ public class InicioSesionControlador {
     }
 
     @PostMapping("/insertar")
+<<<<<<< HEAD
 
     public ResponseEntity<?> insertarInicioSesion(@RequestBody InicioSesion inicioSesion) {
         if (inicioSesion.getUsuario() == null) {
+=======
+    public ResponseEntity<?> insertarInicioSesion(@RequestBody InicioSesion inicioSesion) {
+<<<<<<< HEAD
+        if (inicioSesion.getUsuario() == null || inicioSesion.getUsuario().getId() == null) {
+=======
+        if (inicioSesion.getUsuario() == null) {
+>>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
+>>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
             return new ResponseEntity<>("El usuario no puede ser nulo", HttpStatus.BAD_REQUEST);
         }
 
         Long usuarioId = inicioSesion.getUsuario().getId();
+<<<<<<< HEAD
         if (usuarioId != null && usuarioServicio.existeUsuario(usuarioId)) {
+=======
+<<<<<<< HEAD
+        if (usuarioServicio.existeUsuario(usuarioId)) {
+=======
+        if (usuarioId != null && usuarioServicio.existeUsuario(usuarioId)) {
+>>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
+>>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
             inicioSesion.setTiempodesesion(LocalDateTime.now()); // Establece el valor del tiempo de sesión
             InicioSesion nuevoInicioSesion = inicioSesionServicios.insertarInicioSesion(inicioSesion);
             if (nuevoInicioSesion != null) {
@@ -58,6 +103,17 @@ public class InicioSesionControlador {
             return new ResponseEntity<>("El usuario no existe", HttpStatus.BAD_REQUEST);
         }
     }
+<<<<<<< HEAD
+=======
+
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> bdec9b621c30beabc6a2ea5be56e4d02f7a2a424
+>>>>>>> bba52aaea7f63d63c62adcd64e0c4870ebba3b20
+>>>>>>> 17438130d6ae7a17ebb9d93a3b93206300c4f7c3
     @PutMapping("/actualizar/{id}")
     public ResponseEntity<?> actualizarInicioSesion(
             @PathVariable Long id,
