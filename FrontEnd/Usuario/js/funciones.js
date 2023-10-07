@@ -27,7 +27,7 @@ function findById() {
         error: function (xhr) {
             if (xhr.status === 404) {
                 errorMensaje.classList.add('alert-danger');
-                $("#errormsg").text("❌ El ID " + id + " no se encontró...");
+                $("#errormsg").text("❌ El ID " + idAConsultar + " no se encontró...");
                 return;
             }
         }
@@ -44,13 +44,14 @@ function findAll() {
     errorMensaje.innerHTML = '';
     errorMensaje.classList.remove('alert-danger');
     let tabla = document.querySelector("#tableid");
+
     $.ajax({
         url: "http://localhost:8080/api/usuario/listar",
         type: "GET",
         dataType: "json",
-        success: function (usuario) {
+        success: function (usuarios) {
             $("#tableid tbody").remove();
-            usuario.forEach(function (usuario) {
+            usuarios.forEach(function (usuario) {
                 tabla.innerHTML += '<tr><td>' + usuario.id +
                     '</td><td>' + usuario.nombre +
                     '</td><td>' + usuario.apellido +
@@ -109,10 +110,7 @@ function actualizarUsuario() {
     let errorModal = document.querySelector('#errorAc');
     errorModal.innerHTML = '';
     errorModal.classList.remove('alert-danger');
-    
-    // Obtener el valor del campo "Nº Usuario" del formulario de actualización
     let idAConsultar = $("#nuevoUserId").val();
-    
     let nombre = $("#nombreAC").val();
     let apellido = $("#apellidoAC").val();
     let documento = $("#documentoAC").val();
@@ -126,7 +124,7 @@ function actualizarUsuario() {
         nombre: nombre,
         apellido: apellido,
         documento: documento,
-        nivelSoporte: nivelSoporte // Agregar nivel de soporte al objeto data
+        nivelSoporte: nivelSoporte
     };
     $.ajax({
         url: "http://localhost:8080/api/usuario/actualizar/" + idAConsultar,
@@ -139,52 +137,34 @@ function actualizarUsuario() {
             $("#nombreAC").val('');
             $("#apellidoAC").val('');
             $("#documentoAC").val('');
-            $("#nivelSoporteAC").val(''); // Limpiar el campo nivel de soporte
+            $("#nivelSoporteAC").val('');
             findAll();
         },
         error: function (xhr) {
-            // Handle errors if necessary
+            // Maneja los errores si es necesario
         }
     });
 }
 
 function eliminarUsuario(idUsuario) {
     console.log("ID del usuario a eliminar: " + idUsuario);
+
+    // Configura el ID del usuario como un atributo personalizado en el botón de confirmación
+    $("#confirmarEliminacion").data("idUsuario", idUsuario);
+
+    // Adjunta un manejador de clic una sola vez al botón de confirmación
     $("#confirmarEliminacion").off("click").on("click", function () {
+        var idUsuario = $(this).data("idUsuario"); // Obtiene el ID del usuario desde el atributo personalizado
+
         $.ajax({
             url: "http://localhost:8080/api/usuario/eliminar/" + idUsuario,
             type: "DELETE",
             success: function () {
-                // Remove the corresponding row from the table in the user interface
                 $("#tableid tbody").find("td:contains('" + idUsuario + "')").closest("tr").remove();
             },
             error: function (xhr) {
-                // Handle errors if necessary
+                // Maneja errores si es necesario
             }
         });
     });
 }
-
-function cargarDatos(idUsuario) {
-    $.ajax({
-        url: "http://localhost:8080/api/usuario/" + idUsuario,
-        type: "GET",
-        dataType: "json",
-        success: function (respuesta) {
-            $("#actualizarUsuarioModal input").val('');
-            $("#nuevoUserId").val(respuesta.noUsuario);
-            $("#nuevoUserId").prop('disabled', true);
-            $("#nuevoNombre").val(respuesta.nombre);
-            $("#nuevoApellido").val(respuesta.apellido);
-            $("#nuevoDocumento").val(respuesta.documento);
-            $("#nivelSoporteAC").val(respuesta.nivelSoporte); // Agregar nivel de soporte al formulario de actualización
-        }
-    });
-}
-
-document.getElementById("nuevoUserId").addEventListener("keydown", function (event) {
-    if (event.key === "Enter") {
-        event.preventDefault();
-        findById();
-    }
-});

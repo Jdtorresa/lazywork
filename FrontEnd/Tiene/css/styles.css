@@ -1,24 +1,56 @@
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-    }
-input[type=number] { -moz-appearance:textfield; }
-.required{
-  color: red;
+/* Estilos CSS en styles.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
 }
-.eliminar-link {
-  color: red;
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
 }
-.editar-link {
-  color: yellow;
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
 }
-.agregar-link{
-  color: green;
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
-#check{
-  fill: green;
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
 }
-#byid{
-  border-color: black;
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.product {
+  display: inline-block;
+  margin-right: 20px;
+  text-align: left;
+  vertical-align: top;
+  width: calc(50% - 10px); /* Dividir en dos columnas con margen de 20px */
+}
+
+.product img {
+  max-width: 100%;
+  height: auto;
 }

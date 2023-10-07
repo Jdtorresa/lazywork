@@ -12,7 +12,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/incidencia")
-@CrossOrigin("*")
+@CrossOrigin(origins = "http://127.0.0.1:5500") // Cambia esto al origen de tu sitio web
 public class IncidenciaController {
 
     @Autowired

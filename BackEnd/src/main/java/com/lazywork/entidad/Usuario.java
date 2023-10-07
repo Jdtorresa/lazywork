@@ -4,8 +4,12 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import org.antlr.v4.runtime.misc.NotNull;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "Usuarios")
+
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Usuario {
 
@@ -26,12 +30,15 @@ public class Usuario {
     @Column(name = "nivel_soporte")
     private String nivelSoporte;
 
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<InicioSesion> iniciosSesion = new ArrayList<>();
 
     // Constructor por defecto
     public Usuario() {
     }
 
     // Constructor con parámetros
+
     public Usuario(Long id, String nombre, String apellido, String documento, String nivelSoporte) {
         this.id = id;
         this.nombre = nombre;
@@ -39,6 +46,7 @@ public class Usuario {
         this.documento = documento;
         this.nivelSoporte = nivelSoporte;
     }
+
     public Long getId() {
         return id;
     }
@@ -89,4 +97,5 @@ public class Usuario {
                 ", nivelSoporte='" + nivelSoporte + '\'' +
                 '}';
     }
+
 }

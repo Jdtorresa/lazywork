@@ -13,15 +13,17 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/iniciosesion")
-@CrossOrigin("*")
+@CrossOrigin(origins = "http://127.0.0.1:5500") // Cambia esto al origen de tu sitio web
 public class InicioSesionControlador {
     private final InicioSesionServicios inicioSesionServicios;
     @Autowired
     private UsuarioServicio usuarioServicio;
+
     @Autowired
     public InicioSesionControlador(InicioSesionServicios inicioSesionServicios) {
         this.inicioSesionServicios = inicioSesionServicios;
     }
+
 
     @GetMapping("/buscarporid/{id}")
     public ResponseEntity<InicioSesion> findInicioSesionById(@PathVariable Long id) {
@@ -56,26 +58,30 @@ public class InicioSesionControlador {
             return new ResponseEntity<>("El usuario no existe", HttpStatus.BAD_REQUEST);
         }
     }
-
     @PutMapping("/actualizar/{id}")
-    public ResponseEntity<InicioSesion> actualizarInicioSesion(
+    public ResponseEntity<?> actualizarInicioSesion(
             @PathVariable Long id,
             @RequestBody InicioSesion inicioSesionActualizado
     ) {
-        // Asegúrate de que el usuario asociado a inicioSesionActualizado exista en la base de datos antes de actualizar.
-        // Puedes hacer la verificación en el servicio antes de realizar la actualización.
-        InicioSesion inicioSesion = inicioSesionServicios.actualizarInicioSesion(id, inicioSesionActualizado);
-        if (inicioSesion != null) {
-            return new ResponseEntity<>(inicioSesion, HttpStatus.OK);
+        // Verificar si el inicio de sesión con el ID especificado existe
+        if (inicioSesionServicios.existeInicioSesion(id)) {
+            // Realizar la actualización
+            InicioSesion inicioSesion = inicioSesionServicios.actualizarInicioSesion(id, inicioSesionActualizado);
+            if (inicioSesion != null) {
+                return ResponseEntity.ok(inicioSesion);
+            } else {
+                return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error al actualizar el inicio de sesión");
+            }
         } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Inicio de sesión no encontrado");
         }
     }
 
+
     @DeleteMapping("/eliminar/{id}")
-    public ResponseEntity<Void> eliminarInicioSesion(@PathVariable Long id) {
+    public ResponseEntity<Void> eliminarInicio(@PathVariable Long id) {
         if (inicioSesionServicios.existeInicioSesion(id)) {
-            inicioSesionServicios.eliminarInicioSesion(id);
+            inicioSesionServicios.eliminarInicio(id);
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);

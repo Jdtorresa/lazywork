@@ -39,7 +39,7 @@ public class UsuarioServicio {
         return usuarioRepository.save(usuario);
     }
 
-    public void delete(String id) {
+    public void eliminarUsuario(String id) {
         usuarioRepository.deleteById(id);
     }
 
@@ -67,6 +67,8 @@ public class UsuarioServicio {
         // Lógica para verificar si un usuario existe por su ID
         return usuarioRepository.existsById(id);
     }
+
+
 
     // Puedes agregar más métodos según tus necesidades, como actualización, búsqueda por otros campos, etc.
 }
