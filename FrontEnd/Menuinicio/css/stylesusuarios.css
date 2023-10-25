@@ -1,0 +1,137 @@
+/* Quitar las flechas de incremento y decremento en input tipo número */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/* Estilo para elementos con la clase "required" */
+.required {
+    color: red;
+}
+
+/* Ajustar la altura del elemento "main" */
+main {
+    height: 100vh !important;
+}
+
+/* Estilo para enlaces con la clase "eliminar-link" */
+.eliminar-link {
+    color: red;
+}
+
+/* Estilo para enlaces con la clase "editar-link" */
+.editar-link {
+    color: yellow;
+}
+
+/* Estilo para enlaces con la clase "agregar-link" */
+.agregar-link {
+    color: white;
+}
+
+/* Estilo para el elemento con ID "check" */
+#check {
+    fill: green;
+}
+
+/* Ajustar el color del borde para el elemento con ID "byid" */
+#byid {
+    border-color: #185BEA;
+}
+
+/* Estilo para tablas y sus celdas */
+table,
+th,
+td {
+    border: 3px solid white;
+    border-color: white !important;
+}
+
+/* Añadir sombra a la tabla con ID "tableid" */
+#tableid {
+    box-shadow: 7px 6px 9px rgba(0, 0, 0, 0.7);
+}
+
+/* Estilo para las celdas de la cabecera de la tabla con ID "tableid" */
+#tableid thead tr th {
+    background-color: #185BEA;
+}
+
+/* Estilo para las celdas del cuerpo de la tabla con ID "tableid" */
+#tableid tbody tr td {
+    background-color: white;
+}
+
+/* Estilo para las celdas del cuerpo de la tabla con ID "tableid1" */
+#tableid1 tbody tr td {
+    background-color: #ABBBDE;
+}
+
+/* Establecer el color de fondo para el elemento "html" */
+html {
+    background-color: white;
+}
+
+/* Estilo para el modal con ID "registrarModal" */
+#registrarModal {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Estilo para el contenido del modal con ID "registrarModal" */
+#registrarModal .modal-content {
+    background-color: white;
+    box-shadow: 9px 7px 11px rgba(0, 0, 0, 0.9);
+}
+
+/* Estilo para las etiquetas dentro del cuerpo del modal con ID "registrarModal" */
+#registrarModal .modal-body label {
+    color: black;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+/* Estilo para el encabezado del modal con ID "registrarModal" */
+#registrarModal .modal-header {
+    background-color: white;
+}
+
+/* Estilo para el título del modal con ID "registrarModal" */
+#registrarModal .modal-title {
+    font-size: 23px;
+    font-weight: bold;
+}
+
+/* Estilo para el título del modal con ID "actualizarModal" */
+#actualizarModal .modal-title {
+    color: black;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+/* Estilo para el encabezado del modal con ID "actualizarModal" */
+#actualizarModal .modal-header {
+    background-color: white;
+}
+
+/* Estilo para el modal con ID "actualizarModal" */
+#actualizarModal {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Estilo para el contenido del modal con ID "actualizarModal" */
+#actualizarModal .modal-content {
+    background-color: white;
+    box-shadow: 9px 7px 11px rgba(0, 0, 0, 0.9);
+}
+
+/* Estilo para las etiquetas dentro del cuerpo del modal con ID "actualizarModal" */
+#actualizarModal .modal-body label {
+    color: black;
+    font-size: 17px;
+    font-weight: bold;
+}

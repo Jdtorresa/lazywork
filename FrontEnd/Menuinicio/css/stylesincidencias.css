@@ -1,0 +1,146 @@
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    }
+input[type=number] { -moz-appearance:textfield; }
+.required{
+  color: red;
+}
+main {
+  height: 100vh !important; 
+}
+.eliminar-link {
+  color: red;
+}
+.editar-link {
+  color: yellow;
+}
+.agregar-link{
+  color: white;
+}
+#check{
+  fill: green;
+}
+#byid{
+  border-color: #185BEA;
+}
+table, th, td {
+  border: 3px solid white;
+  border-color: white !important;
+}
+#tableid {
+  box-shadow: 7px 6px 9px rgba(0, 0, 0, 0.7);
+}
+#tableid thead tr th {
+  background-color: #185BEA; 
+}
+
+#tableid tbody tr td{
+  background-color: #ABBBDE; 
+}
+#tableid2 tbody tr td{
+  background-color: #ABBBDE; 
+}
+html{
+  background-color: white;
+}
+#registrarModal{
+  background-color: white(0, 0, 0, 0.7);
+}
+#registrarModal .modal-content{
+  background-color: white;
+  box-shadow: 9px 7px 11px white(0, 0, 0, 0.9);
+}
+#registrarModal .modal-body label{
+  color: black;
+  font-size: 17px;
+  font-weight: bold;
+}
+#registrarModal .modal-header{
+background-color: white;
+}
+#registrarModal .modal-title{
+  font-size: 23px;
+  font-weight: bold;
+}
+
+#actualizarModal .modal-title{
+  color: black;
+  font-size: 23px;
+  font-weight: bold;
+}
+#actualizarModal .modal-header{
+  background-color: white;
+  }
+
+#actualizarModal{
+  background-color: rgba(0, 0, 0, 0.7);
+}
+#actualizarModal .modal-content{
+  background-color: white;
+  box-shadow: 9px 7px 11px rgba(0, 0, 0, 0.9);
+}
+#actualizarModal .modal-body label{
+  color: black;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.custom-button {
+  background-color: #185BEA; /* Cambia el color de fondo */
+  color: white; /* Cambia el color del texto */
+  width: 200px; /* Establece un ancho fijo para hacerlos circulares */
+  height: 100px; /* Establece una altura fija para hacerlos circulares */
+  border: none; /* Quita el borde */
+  border-radius: 100%; /* Hace que los botones sean circulares */
+  cursor: pointer; /* Cambia el cursor al pasar el mouse */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none; /* Quita la decoración del texto */
+  transition: background-color 0.3s, color 0.3s; /* Agrega una transición suave al cambiar el color */
+  font-size: 15px; /* Ajusta el tamaño del texto */
+  margin-right: 216px; /* Agrega un margen derecho entre los botones */
+  margin-bottom: 60px; /* Agrega un margen inferior para separar los botones verticalmente */
+}
+
+.custom-button:hover {
+  background-color: #1E3B90; /* Cambia el color de fondo al pasar el mouse */
+}
+
+/* Añade espacio entre los botones */
+.custom-button + .custom-button {
+  margin-left: 20px;
+}
+
+/* Estilo para los botones de la lista */
+/* Estilo para los botones de la lista */
+.listar-link {
+  text-align: center; /* Centra el texto dentro del botón */
+  padding: 10px 20px; /* Ajusta el espaciado interno */
+  border-radius: 20px; /* Agrega esquinas redondeadas */
+  margin-right: 10px; /* Agrega un margen derecho entre los botones */
+  font-weight: bold; /* Hace que el texto sea más grueso */
+  text-transform: uppercase; /* Convierte el texto a mayúsculas */
+  color: white; /* Cambia el color del texto a blanco */
+  background-color: #185BEA; /* Cambia el color de fondo */
+  border: none; /* Quita el borde */
+  cursor: pointer; /* Cambia el cursor al pasar el mouse */
+  transition: background-color 0.3s, color 0.3s; /* Agrega una transición suave al cambiar el color */
+  font-size: 18px; /* Ajusta el tamaño del texto */
+  margin-bottom: 10px; /* Agrega un margen inferior para separar los botones verticalmente */
+}
+
+.listar-link i {
+  margin-left: 5px; /* Agrega un espacio entre el texto y el ícono */
+}
+
+.listar-link:hover {
+  background-color: #1E3B90; /* Cambia el color de fondo al pasar el mouse */
+}
+
+/* Estilo para el contenedor principal */
+.container {
+  text-align: center; /* Centra el contenido en el contenedor */
+}

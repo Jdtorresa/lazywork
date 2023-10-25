@@ -1,0 +1,75 @@
+/* Clases de estilo personalizado */
+.required {
+  color: red;
+}
+
+.eliminar-link {
+  color: red;
+}
+
+.editar-link {
+  color: yellow;
+}
+
+.agregar-link {
+  color: white;
+}
+
+#check {
+  fill: green;
+}
+
+/* Ajuste de tabla y colores */
+table, th, td {
+  border: 1px solid white;
+}
+
+#tableid {
+  box-shadow: 7px 6px 9px rgba(0, 0, 0, 0.7);
+}
+
+#tableid thead tr th {
+  background-color: #185BEA;
+}
+
+#tableid tbody tr td {
+  background-color: #ABBBDE;
+}
+
+#tableid2 tbody tr td {
+  background-color: #ABBBDE;
+}
+
+/* Fondo de página */
+html {
+  background-color: white;
+}
+
+/* Estilos de modales */
+#registrarModal .modal-content,
+#actualizarModal .modal-content {
+  background-color: white;
+  box-shadow: 9px 7px 11px rgba(0, 0, 0, 0.9);
+}
+
+#registrarModal .modal-body label,
+#actualizarModal .modal-body label {
+  color: black;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+#registrarModal .modal-header,
+#actualizarModal .modal-header {
+  background-color: white;
+}
+
+#registrarModal .modal-title,
+#actualizarModal .modal-title {
+  font-size: 23px;
+  font-weight: bold;
+}
+
+#actualizarModal {
+  background-color: rgba(0, 0, 0, 0.7);
+}

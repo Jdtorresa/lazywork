@@ -32,7 +32,7 @@ public class PrioridadIncidencia {
     public void setTipoPrioridad(String tipoPrioridad) {
         this.tipoPrioridad = tipoPrioridad;
     }
-
+    private String nivelSoporte;
     @Override
     public String toString() {
         return "PrioridadIncidencia{" +
@@ -42,5 +42,13 @@ public class PrioridadIncidencia {
     }
 
     public void setId(Long id) {
+    }
+
+    public String getNivelSoporte() {
+        return nivelSoporte;
+    }
+
+    public void setNivelSoporte(String nivelSoporte) {
+        this.nivelSoporte = nivelSoporte;
     }
 }

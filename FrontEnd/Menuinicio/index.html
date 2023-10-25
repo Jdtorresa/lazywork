@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLEDIER SEVILLANO</title>
+    <link rel="stylesheet" href="css/estilos.css">
+
+    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+  
+</head>
+
+<body id="body">
+
+
+    
+    <header>
+        
+
+        <div class="icon__menu">
+            <i class="fas fa-bars" id="btn_open"></i>
+            
+        </div>
+
+      
+        <div class="container">
+            <div class="estiloredondo">
+                <div class="row mt-2">
+                    <div class="col">
+                        <div class="alert alert-dismissible" role="alert" id="errormsg"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <table class="table table-bordered" id="tableid">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Nºinc</th>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Ubicacion</th>
+                                    <th scope="col">Descripcion</th>
+                                    <th scope="col">Fecha</th>
+                                    <th scope="col">Usuario</th>
+                                    <th scope="col">Estado</th>
+                                    <th scope="col">Prioridad</th>
+                                    <th scope="col">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody class="table-group-divider"></tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col text-center">
+                        <canvas id="graficoIncidencias" width="400" height="200"></canvas>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col text-center">
+                        <a href='#' class='btn listar-link btn-secondary' onclick="findAll2()"><i class='material-icons'>refresh</i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="estiloredondo2">
+                <div class="row mt-2">
+                    <div class="col">
+                        <div class="alert alert-dismissible" role="alert" id="errormsg2"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <table class="table table-bordered" id="tableid2">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Nºinc</th>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Ubicacion</th>
+                                    <th scope="col">Descripcion</th>
+                                    <th scope="col">Fecha</th>
+                                    <th scope="col">Usuario</th>
+                                    <th scope="col">Estado</th>
+                                    <th scope="col">Prioridad</th>
+                                    <th scope="col">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody class="table-group-divider"></tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col text-center">
+                        <canvas id="graficoIncidencias2" width="400" height="200"></canvas>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col text-center">
+                        <a href="#" class="btn listar-link col-md-1 btn-secondary" onclick="findAll2estado4()"><i class="material-icons"></i></a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="estiloredondo3">
+                <div class="row mt-2">
+                    <div class="col">
+                        <div class="alert alert-dismissible" role="alert" id "errormsg3"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <table class="table table-bordered" id="tableid3">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Nºinc</th>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Ubicacion</th>
+                                    <th scope="col">Descripcion</th>
+                                    <th scope="col">Fecha</th>
+                                    <th scope="col">Usuario</th>
+                                    <th scope="col">Estado</th>
+                                    <th scope="col">Prioridad</th>
+                                    <th scope="col">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody class="table-group-divider"></tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col text-center">
+                        <canvas id="graficoIncidencias3" width="400" height="200"></canvas>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col text-center">
+                        <a href="#" class="btn listar-link col-md-1 btn-secondary" onclick="findAll2estado1()"><i class="material-icons"></i></a>
+                    </div>
+                </div>
+            </div>
+                    </div>
+                    <div class="lema-container">
+                        <img src="/Menuinicio/css/1.png" alt="Imagen relacionada" class="lema-image">
+                    </div>
+                    
+
+
+                    <div class="header-menu1">
+                        <div class="login-options">
+                            <a href="#" id="notifications"><i class="fas fa-bell"></i> Notificaciones</a>
+                            <a href="#" id="help"><i class="fas fa-question-circle"></i> Ayuda</a>
+                            <a href="#" id="logout"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
+                        </div>
+                          
+                    </div>
+                   
+
+
+    </header>
+   
+    <div class="menu__side" id="menu_side">
+        <div class="name__page">
+            <i class="fab fa-youtube"></i>
+            <h4>LAZYwork</h4>
+        </div>
+
+        <div class="options__menu">
+            
+            <a href="indexinicio.html" onclick="loadContent('indexinicio.html');">
+                <div class="option indexinicio">
+                    <i class="far fa-file" title="Portafolio"></i>
+                    Inicio Administrador                  
+                </div>
+           
+                
+            </a>
+
+           
+                
+    
+           <a href="indexincidencia.html" onclick="loadContent('indexincidencia.html');">
+                <div class="option indexincidencia">
+                    <i class="far fa-file" title="Portafolio"></i>
+                    Incidencia
+                </div>
+            </a> 
+
+
+
+                </div>
+            <!-- Add similar onclick attributes for other menu items -->
+
+            
+        </div>
+    </div>
+
+    <main>
+        <iframe class="list2"  id="contentFrame" frameborder="0"></iframe>
+
+
+      
+    </main>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="/Menuinicio/js/funcionesincidencia.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+    <script>
+        function loadContent(url) {
+            document.getElementById('contentFrame').src = url;
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            findAll2(); // Llama a la función al cargar la página
+        });
+
+
+        document.addEventListener("DOMContentLoaded", function() {
+            findAll2estado4(); // Llama a la función al cargar la página
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            findAll2estado1(); // Llama a la función al cargar la página
+        });
+
+        
+    </script>
+</body>
+</html>

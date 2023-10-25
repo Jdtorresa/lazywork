@@ -2,7 +2,6 @@ package com.lazywork.servicios;
 
 import com.lazywork.entidad.UsuarioRol;
 import com.lazywork.repositorio.UsuarioRolCrudRepository;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +10,7 @@ import java.util.Optional;
 
 @Service
 public class UsuarioRolService {
+
 
 
     private UsuarioRolCrudRepository repoUsuarioRol;

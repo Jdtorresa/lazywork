@@ -42,6 +42,8 @@ public class Incidencia {
     @Column(name = "FechaRegistro", nullable = true)
     private LocalDate fechaRegistro;
 
+    @Column(name = "tipo_estado")
+    private String tipoEstado;
     // Getters y Setters
 
     public Long getIncidenciaID() {
@@ -106,6 +108,14 @@ public class Incidencia {
 
     public void setFechaRegistro(LocalDate fechaRegistro) {
         this.fechaRegistro = fechaRegistro;
+    }
+
+    public String getTipoEstado() {
+        return tipoEstado;
+    }
+
+    public void setTipoEstado(String tipoEstado) {
+        this.tipoEstado = tipoEstado;
     }
 
     @Override

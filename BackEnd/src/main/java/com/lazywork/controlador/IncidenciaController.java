@@ -1,6 +1,7 @@
 package com.lazywork.controlador;
 
 import com.lazywork.entidad.Incidencia;
+import com.lazywork.entidad.UsuarioRol;
 import com.lazywork.servicios.IncidenciaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -56,5 +57,45 @@ public class IncidenciaController {
     public ResponseEntity<Void> eliminarIncidencia(@PathVariable Long id) {
         incidenciaService.eliminarIncidencia(id);
         return ResponseEntity.noContent().build();
+    }
+    @PostMapping("actualizarIncidenciasNivel1Prioridad1")
+    public ResponseEntity<String> actualizarNivel1Prioridad1() {
+        incidenciaService.actualizarIncidenciasNivel1Prioridad1();
+        return ResponseEntity.ok("Actualización completa");
+    }
+
+    @PostMapping("actualizarIncidenciasNivel2Prioridad2")
+    public ResponseEntity<String> actualizarNivel2Prioridad2() {
+        incidenciaService.actualizarIncidenciasNivel2Prioridad2();
+        return ResponseEntity.ok("Actualización completa");
+    }
+
+    @PostMapping("actualizarIncidenciasNivel3Prioridad3")
+    public ResponseEntity<String> actualizarNivel3Prioridad3() {
+        incidenciaService.actualizarIncidenciasNivel3Prioridad3();
+        return ResponseEntity.ok("Actualización completa");
+    }
+    @PostMapping("actualizarIncidenciasNivel4Prioridad4")
+    public ResponseEntity<String> actualizarNivel4Prioridad4() {
+        incidenciaService.actualizarIncidenciasNivel4Prioridad4();
+        return ResponseEntity.ok("Actualización completa");
+    }
+
+    @GetMapping("/estado4")
+    public ResponseEntity<List<Incidencia>> obtenerIncidenciasEstado4() {
+        List<Incidencia> incidenciasEstado4 = incidenciaService.obtenerIncidenciasEstado4();
+        return ResponseEntity.ok(incidenciasEstado4);
+    }
+
+    @GetMapping("/estado3")
+    public ResponseEntity<List<Incidencia>> obtenerIncidenciasEstado3() {
+        List<Incidencia> incidenciasEstado3 = incidenciaService.obtenerIncidenciasEstado3();
+        return ResponseEntity.ok(incidenciasEstado3);
+    }
+
+    @GetMapping("/estado1")
+    public ResponseEntity<List<Incidencia>> obtenerIncidenciasEstado1() {
+        List<Incidencia> incidenciasEstado1 = incidenciaService.obtenerIncidenciasEstado1();
+        return ResponseEntity.ok(incidenciasEstado1);
     }
 }

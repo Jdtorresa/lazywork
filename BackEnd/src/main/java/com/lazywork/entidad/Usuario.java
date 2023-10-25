@@ -4,6 +4,9 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import org.antlr.v4.runtime.misc.NotNull;
 
+import java.util.Calendar;
+import java.util.Collection;
+
 @Entity
 @Table(name = "Usuarios")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
@@ -88,4 +91,7 @@ public class Usuario {
                 ", nivelSoporte='" + nivelSoporte + '\'' +
                 '}';
     }
+
+
+  
 }

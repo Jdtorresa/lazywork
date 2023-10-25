@@ -11,7 +11,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/rol")
-@CrossOrigin("*")
+@CrossOrigin(origins = "http://127.0.0.1:5500")
 public class RolController {
 
     @Autowired
