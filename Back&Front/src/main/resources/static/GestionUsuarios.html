@@ -10,19 +10,24 @@
     <title>Gestión Administrador</title>
 </head>
 <body>
-<script type="text/javascript">
-    $.get("/user", function(data){
-    if(data!=null){
-    $("#usuario").html(data.nick);
-    $("#correo").html(data.email);
-    }
+
+<script>
+    $(document).ready(function() {
+        getGivenName();
     });
 </script>
-
+<div class="row mt-2">
+    <div class="col-auto">
+        <div class="alert alert-dismissible" role="alert" id="errormsg"></div>
+    </div>
+</div>
 <div class="container authenticated mb-3">
     <h1 class="bg-primary display-1 text-light mb-0">Gestion de Usuarios</h1>
-    <h5 class="bg-primary dispaly-5 mt-0">¡Bienvenido <span id="usuario"></span>!</h5>
+
+    <h5 class="bg-primary dispaly-5 mt-0">Bienvenido <span id="nombreUsuario"></span>!</h5>
+
     <h5 class="bg-primary dispaly-5 mt-0">Correo: <span id="correo"></span></h5>
+    <h5 class="bg-primary dispaly-5 mt-0">Role: <span id="role"></span></h5>
     <a href="/logout">Cerrar Sesion</a>
     <a href="GestionIncidencias.html">Gestión Incidencias</a>
     <!--

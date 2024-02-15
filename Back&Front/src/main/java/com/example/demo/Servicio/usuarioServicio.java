@@ -1,57 +1,37 @@
 package com.example.demo.Servicio;
 
 import com.example.demo.Entidad.Usuario;
-import com.example.demo.Entidad.Usuarioback;
 import com.example.demo.Repositorio.UsuarioCrudRepository;
-import com.example.demo.Repositorio.usuarioRepositorio;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Map;
+import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.Optional;
+
 @Service
-public class usuarioServicio {
+public class UsuarioServicio {
 
-    private usuarioRepositorio repositorio;
-    private UsuarioCrudRepository repoUsu;
+    @Autowired
+    private final UsuarioCrudRepository usuarioRepository;
 
-    public usuarioServicio(usuarioRepositorio repositorio, UsuarioCrudRepository repoUsu) {
-        this.repositorio = repositorio;
-        this.repoUsu = repoUsu;
+    public UsuarioServicio(UsuarioCrudRepository usuarioRepository) {
+        this.usuarioRepository = usuarioRepository;
     }
 
-    public Usuario crear(Usuario usuario) {
-        return repositorio.save(usuario);
+
+
+    public void delete(int id) {
+        usuarioRepository.deleteById(Long.valueOf(id));
     }
 
-    public Usuario buscarEmail(String email) {
-        if (repositorio.findById(email).isPresent()) {
-            return repositorio.findById(email).get();
-        } else {
-            return null;
-        }
+    public boolean existsById(int id) {
+        // Lógica para verificar si un usuario existe por su ID
+        return usuarioRepository.existsById(Long.valueOf(id));
     }
 
-    public Usuario getCrearUsuario(Map<String, Object> dataUser) {
-        String email = (String) dataUser.get("email");
-        Usuario user = buscarEmail(email);
 
-        if (user == null) {
-            String name = (String) dataUser.get("nickname");
-            String imag = (String) dataUser.get("picture");
-            String auth_id = (String) dataUser.get("sub");
-
-            // Utiliza repoUsu para obtener Usuarioback
-            Usuarioback usuarioback = repoUsu.findByCorreo(email);
-
-            if (usuarioback != null) {
-                // Asigna la relación y el tipoderol al nuevo usuario
-                Usuario nuevo = new Usuario(email, name, imag, auth_id, usuarioback, usuarioback.getTipoderol());
-                return this.crear(nuevo);
-            } else {
-                // Si no se encuentra Usuarioback, puedes manejarlo según tus necesidades
-                return null;
-            }
-        } else {
-            return user;
-        }
+    public Usuario crear(Usuario user) {
+        return usuarioRepository.save(user);
     }
 }

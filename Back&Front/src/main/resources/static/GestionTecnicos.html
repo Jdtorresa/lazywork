@@ -13,8 +13,8 @@
 <script type="text/javascript">
     $.get("/user", function(data){
     if(data!=null){
-    $("#usuario").html(data.nick);
     $("#correo").html(data.email);
+    $("#usuario").html(data.name);
     }
     });
 </script>

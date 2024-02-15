@@ -1,22 +1,22 @@
 package com.example.demo.Controlador;
 
 import com.example.demo.Entidad.Usuario;
-import com.example.demo.Servicio.ServicioUsuarioback;
-import com.example.demo.Servicio.usuarioServicio;
+import com.example.demo.Servicio.UsuarioServicio;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.oauth2.core.oidc.user.OidcUser;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.core.GrantedAuthority;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
-public class ControladorUsuario {
+public class UsuarioControlador {
+    UsuarioServicio usuarioServicio;
 
-    usuarioServicio userServicio;
-    ServicioUsuarioback estServicio;
-
-    public ControladorUsuario(ServicioUsuarioback estServicio, usuarioServicio userServicio) {
-        this.userServicio = userServicio;
-        this.estServicio = estServicio;
+    public UsuarioControlador(UsuarioServicio usuarioServicio) {
+        this.usuarioServicio = usuarioServicio;
     }
 
     @GetMapping("/user")
@@ -24,14 +24,15 @@ public class ControladorUsuario {
         System.out.println(principal.getClaims());
         //System.out.println(principal.getUserInfo()); // Cacharrearle
         //System.out.println(principal.getIdToken()); // Cacharrearle
+        String roles = String.valueOf(principal.getAuthorities());
         Usuario user = new Usuario(
-                (String) principal.getClaims().get("email"),
-                (String) principal.getClaims().get("nickname"),
-                (String) principal.getClaims().get("picture"),
-                (String) principal.getClaims().get("sub"),
-                (String) principal.getClaims().get("rol") // Cacharrearle
+                (String) principal.getClaims().get("email"), // correoElectronico
+                (String) principal.getClaims().get("given_name"), // nombreUsuario
+                (String) principal.getClaims().get("picture"), // fotoPerfil
+                (String) principal.getClaims().get("sub"), // auth_id
+                roles // rolDeUsuario
         );
-        userServicio.crear(user); // Con este inserta a la base de datos, sin embargo falta cacharrear como insertar el rol
+        usuarioServicio.crear(user); // Con este inserta a la base de datos, sin embargo falta cacharrear como insertar el rol
 
         // E_Usuario user = this.userServicio.buscarEmail(email);
         return user;

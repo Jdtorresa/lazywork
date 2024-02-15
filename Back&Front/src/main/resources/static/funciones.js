@@ -19,3 +19,25 @@ var isLoggedIn = false;
 
     // Llama a la función al cargar la página (puedes llamarla según eventos de inicio de sesión reales)
     toggleButtons();
+
+    function getGivenName() {
+        let errorMensaje = document.querySelector('#errormsg');
+        errorMensaje.innerHTML = '';
+        errorMensaje.classList.remove('alert-danger');
+        let nombreUsuario = document.querySelector("#nombreUsuario");
+        $.ajax({
+            url: "http://localhost:8080/user"
+            type: "GET",
+            dataType: "json",
+            success: function (respuesta) {
+                $("#nombreUsuario").text(respuesta.nombreUsuario);
+            },
+            error: function (xhr) {
+                if (xhr.status === 404) {
+                    errorMensaje.classList.add('alert-danger');
+                    $("#errormsg").text("❌ El usuario no se encontró...");
+                    return;
+                }
+            }
+        });
+    }
